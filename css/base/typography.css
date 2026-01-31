@@ -1,0 +1,152 @@
+@charset "UTF-8";@media screen and (min-width: 0px) {.container {
+        text-justify: justify-all; 
+        font-family: heisei-maru-gothic-std, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+.main-text
+.main-text
+.logo-name > svg > text {
+        font-family: condor, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 7vh;
+        line-height: 7vh;
+    }}
+
+html, body{
+  font-family: var(--wb-font);
+  color: var(--wb-text);
+  background: var(--wb-bg);
+}
+
+h1,h2,h3,h4{
+  font-family: var(--wb-font);
+}
+
+a{ color: var(--wb-text); }
+
+a:hover{ color: var(--wb-text); }
+
+body{ margin:0; padding:0; }
+
+ul.bullets{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+ul.bullets > li{
+  background: var(--wb-panel);
+  border: 1px solid var(--wb-border);
+  border-left: 3px solid var(--wb-accent);
+  border-radius: 14px;
+  padding: 12px 14px;
+  line-height: 1.65;
+  box-shadow: var(--wb-shadow);
+}
+
+html, body{
+  height: auto !important;
+  overflow: auto !important;
+  overflow-x: hidden !important; 
+}
+
+body{
+  padding-top: 64px; 
+}
+
+body{ padding-top: 68px; }
+
+body{ margin:0 !important; padding-top: 64px !important; }
+/* =========================================================
+   WaffBell Text System (Base -> Role -> Section)
+   - Base: .wb-text
+   - Role: .wb-text--*
+   - Section/local: existing BEM classes (e.g., .top-hero__*)
+   ========================================================= */
+
+/* Base (all readable text inside content sections should include this) */
+.wb-text{
+  font-family: var(--wb-font);
+  color: var(--wb-text);
+  line-height: 1.8;
+  text-rendering: geometricPrecision;
+}
+
+/* Role: Body */
+.wb-text--body{
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Role: Sub / note */
+.wb-text--sub{
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* Role: Kicker / label */
+.wb-text--kicker{
+  font-size: var(--wb-sub-title-size);
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Role: Section title */
+.wb-text--title{
+  font-size: var(--wb-section-title-size);
+  letter-spacing: .06em;
+  line-height: 1.2;
+  color: var(--wb-text);
+  font-weight: 700;
+}
+
+/* Role: Panel/Card title */
+.wb-text--panel-title{
+  font-size: var(--wb-panel-title-size);
+  font-weight: 800;
+  letter-spacing: .02em;
+  line-height: 1.15;
+  color: var(--wb-text);
+}
+
+/* Deprecated: kept for backward compatibility (use .wb-text--panel-title) */
+.wb-text--panel-subtitle{
+  font-size: var(--wb-sub-title-size);
+  font-weight: 800;
+  letter-spacing: .06em;
+  line-height: 1.25;
+  color: var(--wb-text);
+}
+
+/* Role: Facet label (topic label inside panels, e.g., Hypothesis Validation) */
+.wb-text--facet-label{
+  font-size: var(--wb-sub-title-size);
+  font-weight: 800;
+  letter-spacing: .02em;
+  line-height: 1.15;}
+/* Role: Chip / badge (UI label text) */
+.wb-text--chip{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+/* Modifiers */
+.wb-text--muted{ color: var(--wb-muted); }
+.wb-text--on-light{ color: var(--wb-text); }
+.wb-text--link:hover{ color: var(--wb-accent); }
+
+/* Legacy aliases (temporary bridge; remove after migration) */
+.main-text
+.main-text
+
+.sub-title{ /* role: kicker */ }
+.panel-title{ /* role: panel-title */ }
+.panel-subtitle{ /* role: panel-subtitle */ }
+.section-title{ /* role: title (layout in section-shell.css) */ }

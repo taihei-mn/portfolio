@@ -1,0 +1,72 @@
+/* =========================================================
+   Theme Text Colors (Semantic)
+   Concept:
+   - H1 : Outline title (symbolic)
+   - H2 : Solid accent
+   - Others : calm hierarchy
+   ========================================================= */
+
+:root[data-theme] .wb-text{
+  color: var(--wb-text);
+  background: transparent;
+}
+
+/* H1 / Main Title : outline */
+:root[data-theme] .wb-text--title{
+  color: rgba(0,0,0,0);
+  -webkit-text-stroke: 1.2px var(--wb-title-stroke);
+  background: transparent;
+}
+
+/* H2 / Panel Title : accent */
+:root[data-theme] .wb-text--panel-title{
+  color: var(--wb-accent);
+  background: transparent;
+}
+
+/* H3 / Subtitle */
+:root[data-theme] .wb-text--panel-subtitle{
+  color: var(--wb-panel-subtitle);
+  background: transparent;
+}
+
+/* Facet Label */
+:root[data-theme] .wb-text--facet-label{
+  color: var(--wb-facet-label);
+  background: transparent;
+}
+
+/* Body */
+:root[data-theme] .wb-text--body{
+  color: var(--wb-text);
+  background: transparent;
+}
+
+/* Sub */
+:root[data-theme] .wb-text--sub{
+  color: var(--wb-muted);
+  background: transparent;
+}
+
+/* Kicker */
+:root[data-theme] .wb-text--kicker{
+  color: var(--wb-kicker);
+  background: transparent;
+}
+
+/* Chips */
+:root[data-theme] .wb-text--chip{
+  color: var(--wb-text);
+  background: var(--chip-bg);
+}
+
+/* Links */
+:root[data-theme] a.wb-text{
+  color: var(--wb-text);
+  text-decoration: underline;
+  text-decoration-color: var(--wb-accent-soft);
+  text-underline-offset: 0.18em;
+}
+:root[data-theme] a.wb-text:hover{
+  color: var(--wb-accent);
+}

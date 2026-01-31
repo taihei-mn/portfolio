@@ -1,0 +1,45 @@
+@keyframes wb-burst{
+  to{ transform: translate(var(--dx), var(--dy)) rotate(var(--dr)) scale(0.8); opacity: 0; }
+}
+
+@keyframes wb-open-fade{ to{ opacity: 0; } }
+
+@keyframes wbLogoIn{
+  0%{ opacity: 0; transform: translateY(8px) scale(.96); filter: blur(2px); }
+  55%{ opacity: 1; filter: blur(0px); }
+  100%{ opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes wbFloatA{
+  0%{ transform: translate3d(0,0,0) scale(1); }
+  50%{ transform: translate3d(20px,-14px,0) scale(1.03); }
+  100%{ transform: translate3d(0,0,0) scale(1); }
+}
+
+@keyframes wbFloatB{
+  0%{ transform: translate3d(0,0,0) scale(1); }
+  50%{ transform: translate3d(-18px,16px,0) scale(1.02); }
+  100%{ transform: translate3d(0,0,0) scale(1); }
+}
+
+@keyframes wbBurst{
+  0%{ opacity: 1; transform: translate3d(0,0,0) rotate(0); }
+  75%{ opacity: .85; }
+  100%{ opacity: 0; transform: translate3d(var(--dx), var(--dy), 0) rotate(var(--dr)); }
+}
+
+@keyframes wb-ripple{
+  0%   { transform: translate(-50%, -50%) scale(1.00); opacity: 0.35; }
+  72%  { transform: translate(-50%, -50%) scale(2.45); opacity: 0.35; }
+  100% { transform: translate(-50%, -50%) scale(2.70); opacity: 0.00; }
+}
+
+@keyframes wb-scroll-bob{
+  0%,100%{ transform: translateY(0); opacity:.55; }
+  50%{ transform: translateY(-6px); opacity: .95; }
+}
+
+@keyframes skillsAurora{
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  100% { transform: translate3d(0,-8px,0) scale(1.02); }
+}

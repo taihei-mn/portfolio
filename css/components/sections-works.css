@@ -1,0 +1,230 @@
+#works{
+  background: transparent !important;
+}
+#top, #about, #skills, #works, #engagement, #contact{
+  background: transparent !important;
+}
+.area,
+#top,#about,#skills,#works,#engagement,#contact{
+  background: transparent !important;
+}
+#top, #about, #skills, #works, #engagement, #contact{
+  background: transparent !important;
+}
+#works .work-item{
+  position: relative;
+  border-top: 2px solid var(--wb-border);
+}
+#works .work-skills{
+  display:flex;
+  gap:8px;
+  margin:8px 0 4px;
+}
+#works .ws{
+  font-size:0.7rem;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid var(--wb-border);
+  opacity:0.85;
+}
+#works .ws.leadership{ border-color:rgba(120,180,255,0.55); }
+#works .ws.engineering{ border-color:rgba(180,120,255,0.55); }
+#works .ws.process{ border-color:rgba(120,255,200,0.45); }
+#works .work-item{
+  border-top-color: var(--wb-border) !important;
+}
+#works .work-titlebar{
+  margin-bottom: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--wb-border);
+  background:
+    radial-gradient(520px 220px at 12% 18%, rgba(180,120,255,0.10), transparent 60%),
+    radial-gradient(520px 220px at 88% 60%, rgba(120,180,255,0.10), transparent 62%),
+    var(--wb-border);
+}
+#works .work-titlebar h3{
+  margin: 0;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+}
+#works .work-titlebar::before{
+  content:"";
+  position:absolute;
+  width: 12px; height: 12px;
+  border-left: 2px solid rgba(255,255,255,0.20);
+  border-top: 2px solid rgba(255,255,255,0.20);
+  border-radius: 2px;
+  transform: translate(10px,10px);
+}
+#works .work-titlebar{ position: relative; }
+#works .work-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top: 12px;
+}#works .work-pill{
+  padding: 6px 10px;}#works .work-pill{
+  padding: 6px 10px;}
+
+.vworks .works-toolbar{
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}.vworks .wchip{
+  appearance: none;
+  border: 1px solid var(--wb-border);
+  background: var(--wb-panel);
+  padding: 8px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease, color .2s ease;}.vworks .wchip:hover{
+  border-color: var(--wb-accent-strong);
+  transform: translateY(-1px);}.vworks .wchip.is-active{
+  background: var(--wb-accent);
+  border-color: var(--wb-accent);}
+.vworks .works-grid2{
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.vworks .wcard{
+  border-radius: 20px;
+  border: 1px solid var(--wb-border);
+  background: var(--wb-panel);
+  padding: 16px 16px 14px;
+}
+.vworks .wcard:hover{
+  border-color: var(--wb-accent-soft);
+}
+.vworks .wcard-head{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+
+  flex-direction: column;
+}.vworks .wcard .wcard-title{
+  margin: 0;
+
+  display: block;
+
+  width: 100%;
+
+  text-align: center;}
+.vworks .wicon{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid var(--wb-accent-soft);
+  color: var(--wb-accent-strong);
+  background: radial-gradient(circle at 30% 30%, var(--wb-accent-soft), transparent);
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+.vworks .wicon svg{ width: 20px; height: 20px; }.vworks .wbadges{
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;}.vworks .wbadge{
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--wb-border);
+  background: var(--wb-panel);}.vworks .wcard-lead{
+  margin: 12px 0 0;}.vworks .wchips{
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;}
+.vworks details.wdetails{
+  margin-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  padding-top: 10px;
+}
+.vworks details.wdetails > summary{
+  cursor: pointer;
+  list-style: none;
+  color: var(--wb-accent-strong);
+  letter-spacing: .06em;
+  font-size: 12px;
+}
+.vworks details.wdetails > summary::-webkit-details-marker{ display:none; }
+.vworks details.wdetails > summary:after{
+  content: " +";
+  opacity: .9;
+}
+.vworks details.wdetails[open] > summary:after{
+  content: " −";
+}
+.vworks .wlist{
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.vworks .wlist li{
+  margin: 8px 0;
+  padding-left: 14px;
+  position: relative;
+  color: rgba(255,255,255,.76);
+  line-height: 1.65;
+  font-size: 13px;
+}
+.vworks .wlist li:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .82em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--wb-accent);
+  transform: translateY(-50%);
+  opacity: .9;
+}
+.vworks .works-foot{
+  margin-top: 14px;
+  max-width: 900px;
+  opacity: .86;
+}
+@media (max-width: 980px){
+  .vworks .works-grid2{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px){
+  .vworks .wcard-head{ flex-direction: column; align-items: center; }
+  .vworks .wicon{ order: 0; }
+  .vworks .wcard-meta{ width: 100%; }
+.vworks .wcard-head{ justify-content: center; }.vworks .wcard .wcard-title{ text-align: center; }
+}
+
+/* WORKS: panel title size tweak */
+#works .wcard-title.wb-text--panel-title{
+  font-size: 1.15rem;
+}
+
+
+/* WORKS: icon should appear before the title, and add a bit more spacing between title and badges */
+.vworks .wcard-head{ align-items: flex-start; }
+.vworks .wicon{ order: -1; margin-bottom: 0.35rem; }
+.vworks .wcard-title{ margin-bottom: 0.35rem; text-align: left; }
+.vworks .wbadges{ margin-top: 0; }
+
+
+/* WORKS: spacing fix (override previous tightening) */
+.vworks .wcard-title{
+  margin-bottom: 0.25rem; /* タイトル直下の詰まりを作らない程度 */
+}
+.vworks .wbadges{
+  margin-top: 0.7rem; /* タイトルとチップの間隔を明確に広げる */
+}
+
+
+/* WORKS: spacing fine-tune (+a bit more) */
+.vworks .wbadges{
+  margin-top: 0.95rem; /* 0.7rem → 0.95rem */
+}

@@ -1,0 +1,65 @@
+:root[data-theme="dark"]{
+  /* Core surfaces */
+  --wb-bg: #0f1115;
+  --wb-bg-2: #141823;
+  --wb-panel: rgba(20,24,35,.72);
+
+  /* Typography */
+  --wb-text: #f5f7fb;
+  --wb-muted: rgba(245,247,251,.72);
+
+  /* Lines / borders */
+  --wb-line: rgba(255,255,255,.10);
+  --wb-border: rgba(255,255,255,.10);
+
+  /* Brand */
+  --wb-yellow: #ffbd31;
+  --wb-yellow-2: #ffd36a;
+  --wb-accent: var(--wb-yellow);
+  --wb-accent-soft: rgba(255,189,49,.35);
+  --wb-accent-strong: var(--wb-yellow-2);
+  --wb-on-accent: #0f1115;
+
+  /* Shadows */
+  --wb-shadow: 0 12px 30px rgba(0,0,0,.35);
+
+  /* Section title */
+  --wb-section-title-line: rgba(255,255,255,.38);
+  --wb-section-title-color: rgba(255,189,49,.96);
+
+  /* Chips */
+  --chip-bg: rgba(255,255,255,0.05);
+  --chip-bd: rgba(255,255,255,0.14);
+  --chip-strong-bg: rgba(255,255,255,0.10);
+  --chip-strong-bd: rgba(255,255,255,0.28);
+  --chip-strong-glow: rgba(255,255,255,0.18);
+
+  /* Title styling (outline / fill) */
+  --wb-title-fill: var(--wb-text);
+  --wb-title-stroke: var(--wb-accent);
+  --wb-title-muted: var(--wb-muted);
+
+  /* Section FX (optional) */
+  --wb-skills-glow-a: rgba(80,160,255,0.22);
+  --wb-skills-glow-b: rgba(120,200,255,0.12);
+
+  --wb-works-glow-a: rgba(0,200,255,0.25);
+  --wb-works-glow-b: rgba(0,255,200,0.18);
+  --wb-works-glow-c: rgba(180,120,255,0.2);
+
+  --wb-danger: #ff5f5f;
+
+  /* Canvas / animation (JS reads these) */
+  --wb-fx-constellation-line: rgba(255,189,49,0.28);
+  --wb-fx-constellation-dot: rgba(255,189,49,0.75);
+  --wb-fx-constellation-faint: rgba(255,189,49,0.10);
+  --wb-fx-constellation-glow: transparent;
+  --wb-fx-opening-particle: #ffbd31;
+  --wb-fx-opening-text: rgba(245,247,251,.92);
+  --wb-fx-opening-glow: rgba(255,189,49,0.10);
+  --wb-panel-subtitle: #C7B8D6;
+  --wb-facet-label: #D15973;
+  --wb-kicker: #C8A6FF;
+  --wb-fx-opening-bg: radial-gradient(1200px 700px at 20% 20%, var(--wb-accent-soft), transparent 55%),
+                     linear-gradient(180deg, #0f1115, #0b0d12);
+}

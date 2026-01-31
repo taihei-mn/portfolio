@@ -1,0 +1,7 @@
+html{
+  scroll-padding-top: var(--header-offset, 84px);
+}
+
+.area{
+  scroll-margin-top: var(--header-offset, 84px);
+}

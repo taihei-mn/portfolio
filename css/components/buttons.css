@@ -1,0 +1,104 @@
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .04em;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-primary{
+  border: 1px solid var(--wb-accent);
+  color: var(--wb-accent);
+  background: transparent;
+}
+
+.btn-primary:hover{
+  background: var(--wb-accent);
+  color: var(--wb-on-accent);
+  transform: translateY(-1px);
+}
+
+.btn-ghost{
+  border: 1px solid var(--wb-border);
+  color: var(--wb-text);
+  background: transparent;
+}
+
+.btn-ghost:hover{
+  border-color: var(--wb-accent);
+  color: var(--wb-accent);
+  transform: translateY(-1px);
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-family: var(--wb-font);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 189, 49, .85);
+}
+
+.btn-primary{
+  background: transparent;
+  color: var(--wb-accent);
+}
+
+.btn-primary:hover{
+  background: var(--wb-accent);
+  color: #0b0f16;
+}
+
+/* Pills / Chips (component)
+   Text styling is handled by typography role classes (e.g., .wb-text--chip).
+   This file owns shape, background, border, and interaction.
+*/
+.pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill,
+.lead-chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-bd);
+  color: var(--chip-fg);
+
+  white-space: nowrap;
+}
+
+.pill.strong,
+.lead-chip.strong{
+  background: var(--chip-strong-bg);
+  border-color: var(--chip-strong-bd);
+  box-shadow: 0 0 0 1px var(--chip-strong-glow), 0 14px 28px rgba(0,0,0,0.22);
+}
+
+@media (hover:hover){
+  .pill:hover,
+  .lead-chip:hover{
+    transform: translateY(-1px);
+  }
+}

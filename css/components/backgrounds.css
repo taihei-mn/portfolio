@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.bg-top,
+.bg-news,
+.bg-about,
+.bg-work,
+.bg-values,
+.bg-contact{
+  background: transparent !important;
+  background-image: none !important;
+}
+
+@media screen and (min-width: 700px) {
+  .bg-top,
+  .bg-news,
+  .bg-about,
+  .bg-work,
+  .bg-values,
+  .bg-contact { position: relative; }
+}
+
+@media screen and (max-width: 700px) {
+  .bg-top { height: auto; width: auto; position: relative; }
+  .bg-news,
+  .bg-about,
+  .bg-work,
+  .bg-values,
+  .bg-contact { height: auto; position: relative; }
+}

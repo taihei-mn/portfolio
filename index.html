@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+
+<script id="wb-theme-init">
+(function(){
+  try{
+    var t = localStorage.getItem('wb-theme');
+    t = (t === 'light' || t === 'dark') ? t : null;
+    if(!t){
+      try{
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }catch(e){ t='dark'; }
+    }
+    document.documentElement.dataset.theme = t;
+    // Back-compat classes used by some CSS
+    document.addEventListener('DOMContentLoaded', function(){
+      document.body.classList.toggle('dark-theme', t === 'dark');
+      document.body.classList.toggle('light-theme', t === 'light');
+    });
+  }catch(e){}
+})();
+</script>
+
+<meta charset="utf-8" content="IE=Edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>WaffBell | Portfolio</title>
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div aria-label="Opening" class="opening" id="opening" role="dialog"><canvas id="opening-canvas"></canvas></div>
+<canvas aria-hidden="true" id="bg-constellation"></canvas>
+<header class="header">
+<div aria-hidden="true" class="bg-header"></div>
+<div class="header-inner">
+<div class="header-left">
+<button aria-expanded="false" aria-label="Open menu" class="menu-button" id="sidebar-open" type="button">
+<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+</button>
+<a aria-label="Home" class="logo-name" href="#top">
+<svg aria-label="WaffBell" role="img" viewbox="0 0 91 24"><text dominant-baseline="central" text-anchor="middle" x="45.5" y="12">WaffBell</text></svg>
+</a>
+</div>
+<nav aria-label="Top navigation" class="topnav">
+<a href="#top">TOP</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#works">WORKS</a><a href="#engagement">ENGAGEMENT</a><a href="#contact">CONTACT</a>
+</nav>
+<div class="header-right">
+<div class="lang-switch"><a class="lang current" href="index.html">JP</a><a class="lang" href="index.en.html">EN</a></div>
+<button class="theme-toggle theme-switch" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme" role="switch" aria-checked="false" data-theme-toggle="1"><span class="theme-switch__track" aria-hidden="true"><span class="theme-switch__thumb" aria-hidden="true"></span></span><span class="sr-only" id="theme-toggle-label">Toggle theme</span></button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="sidebar-backdrop" id="sidebar-backdrop"></div>
+<aside aria-label="Site navigation" class="sidebar" id="sidebar">
+<div class="sidebar-head">
+<div class="sidebar-title wb-text wb-text--panel-title">MENU</div>
+<button aria-label="Close menu" class="sidebar-close" id="sidebar-close" type="button">×</button>
+</div>
+<div class="sidebar-tools">
+  <div class="sidebar-tool-row"><div class="sidebar-tool-label">Theme</div><button class="theme-toggle theme-switch sidebar-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme" role="switch" aria-checked="false" data-theme-toggle="1">
+    <span class="theme-switch__track" aria-hidden="true"><span class="theme-switch__thumb" aria-hidden="true"></span></span>
+    <span class="sr-only">Toggle theme</span>
+  </button></div>
+</div>
+<nav aria-label="Sidebar navigation" class="sidebar-nav">
+<a class="sidebar-link" href="#top">TOP</a>
+<a class="sidebar-link" href="#about">ABOUT</a>
+<a class="sidebar-link" href="#skills">SKILLS</a>
+<a class="sidebar-link" href="#works">WORKS</a>
+<a class="sidebar-link" href="#engagement">ENGAGEMENT</a>
+<a class="sidebar-link" href="#contact">CONTACT</a>
+</nav>
+</aside>
+<div class="container">
+<section class="area bg-top fixed-bg" id="top">
+<div class="top-hero">
+<div class="top-hero__inner">
+<div class="top-hero__copy">
+<p class="top-hero__kicker sub-title wb-text wb-text--kicker">WaffBell</p>
+<h1 class="top-hero__headline wb-text wb-text--title">Technical Lead / Software Engineer</h1>
+<p class="top-hero__sub wb-text wb-text--body">Real-time 3D・プラットフォーム開発・CI/CD を軸に、要件整理から設計、実装、運用改善まで一貫してリードします。<br/>複雑さを整理し、短いサイクルで価値を出し続けるプロセスを作ります。<br/>幅広い領域での経験を活かし、目的に応じて最適な技術と進め方を選び、確実に前に進めます。<br/></p>
+<div class="top-hero__cta">
+<a class="btn btn-primary" href="#works">View WORKS</a>
+<a class="btn btn-ghost" href="#contact">Contact</a>
+</div>
+</div>
+<div class="top-hero__cards">
+<div class="top-card">
+<div class="top-card__head">
+<div class="top-card__icon">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M4 20V9l8-5 8 5v11" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 22V12h6v10" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Architecture &amp; Decision Making</div>
+</div>
+<p class="wb-text wb-text--body">要件と制約を整理し、選ぶべき設計と優先順位を決め切ります。</p>
+</div>
+<div class="top-card">
+<div class="top-card__head">
+<div class="top-card__icon">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M12 3v6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M6 9h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M7 21h10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M8 9v12h8V9" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">End-to-End Technical Leadership</div>
+</div>
+<p class="wb-text wb-text--body">プロトタイプ／PoCから商品化・運用まで、フェーズを跨いで意思決定と推進を担います。</p>
+</div>
+<div class="top-card">
+<div class="top-card__head">
+<div class="top-card__icon">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M8 3h8l2 6v12H6V9l2-6Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 13h6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 17h6" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Productization &amp; Operational Quality</div>
+</div>
+<p class="wb-text wb-text--body">品質・運用・CI/CDを含む仕組み化で、継続的に改善できる状態を作ります。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="area bg-news fixed-bg" id="about">
+<div class="content about">
+<div class="section-head">
+<h2 class="section-title wb-text wb-text--title">ABOUT</h2>
+</div>
+<div class="panel about-hero">
+<p class="about-kicker sub-title wb-text wb-text--kicker">Profile</p>
+<div class="about-title panel-title wb-text wb-text--panel-title">Background &amp; approach</div>
+<p class="about-intro wb-text wb-text--body">2017年以降、音声認識AIエージェントのプロトタイプ開発を起点に、エンタメ／スポーツ領域でリアルタイム3D（Unreal Engine / C++）から開発基盤（CI/CD）、運用改善まで横断して担当してきました。</p>
+<p class="about-intro wb-text wb-text--body">先端領域におけるプロトタイプ開発・PoC から商品化、運用フェーズまで一貫して対応し、幅広い経験を活かして最短で価値が出る設計と実装に落とし込みます。要件の整理と意思決定、品質の引き上げをリードします。</p>
+</div>
+<div class="about-grid">
+<div class="about-block">
+<div class="block-title wl-title panel-title wb-text wb-text--panel-title">WHAT I LEAD</div>
+<div class="lead-stack">
+<div class="lead-row axis-leadership">
+<div class="lead-icon">
+<svg aria-hidden="true" class="lead-ico" viewbox="0 0 24 24">
+<path d="M4 20V9l8-5 8 5v11" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="lead-body">
+<div class="lead-title panel-subtitle wb-text wb-text--panel-subtitle">Architecture &amp; Decision Making</div><p class="lead-desc wb-text wb-text--body">要件・制約・リスクを言語化し、設計と優先順位を決め切ります。</p>
+<ul class="lead-list">
+<li class="wb-text wb-text--body">状態管理・データフロー設計</li>
+<li class="wb-text wb-text--body">API / モジュール境界の整理</li>
+<li class="wb-text wb-text--body">性能・品質・納期のトレードオフ判断</li>
+</ul>
+</div>
+</div>
+<div class="lead-row axis-engineering">
+<div class="lead-icon">
+<svg aria-hidden="true" class="lead-ico" viewbox="0 0 24 24">
+<path d="M12 3v6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M6 9h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M7 20h10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M8 20V9m8 11V9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="lead-body">
+<div class="lead-title panel-subtitle wb-text wb-text--panel-subtitle">End-to-End Technical Leadership</div><p class="lead-desc wb-text wb-text--body">初期検証から実運用まで、フェーズ横断で前に進めます。</p>
+<ul class="lead-list">
+<li class="wb-text wb-text--body">プロトタイプ → Product の移行設計</li>
+<li class="wb-text wb-text--body">品質基準の定義とレビュー運用</li>
+<li class="wb-text wb-text--body">関係者の合意形成とリスク管理</li>
+</ul>
+</div>
+</div>
+<div class="lead-row axis-process">
+<div class="lead-icon">
+<svg aria-hidden="true" class="lead-ico" viewbox="0 0 24 24">
+<path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 15h6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M8 7V5h8v2" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="lead-body">
+<div class="lead-title panel-subtitle wb-text wb-text--panel-subtitle">Productization &amp; Operational Quality</div><p class="lead-desc wb-text wb-text--body">「使われ続ける」品質へ引き上げ、改善が回る状態を作ります。</p>
+<ul class="lead-list">
+<li class="wb-text wb-text--body">CI/CD・自動化による安定運用</li>
+<li class="wb-text wb-text--body">可観測性・デバッグ容易性の整備</li>
+<li class="wb-text wb-text--body">手順の標準化と継続的改善</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="about-block">
+<div class="block-title panel-title wb-text wb-text--panel-title">CAREER TIMELINE</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-meta">2017–</div>
+<div class="timeline-body">
+<div class="panel-subtitle wb-text wb-text--panel-subtitle">Implementation</div>
+<div class="timeline-desc wb-text wb-text--body">先端領域のプロトタイプ実装・検証を担当し、短いサイクルで価値を提示する進め方を経験しました。</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-meta">2020–</div>
+<div class="timeline-body">
+<div class="panel-subtitle wb-text wb-text--panel-subtitle">Architecture</div>
+<div class="timeline-desc wb-text wb-text--body">複数機能・長期運用を見据えた構造設計を担当し、拡張性・再現性・運用しやすさを設計に落とし込みました。</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-meta">2023–</div>
+<div class="timeline-body">
+<div class="panel-subtitle wb-text wb-text--panel-subtitle">Technical Leadership</div>
+<div class="timeline-desc wb-text wb-text--body">技術判断と合意形成、レビュー運用、リスク管理を担い、関係者を巻き込みながら意思決定と実装を推進しています。</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="area bg-about fixed-bg dark-point" id="skills">
+<div class="content skills">
+<div class="section-head">
+<h2 class="section-title wb-text wb-text--title">SKILLS</h2>
+</div>
+<div class="skills-intro">
+<p class="wb-text wb-text--body">「技術の深さ」と「意思決定・推進」を両立し、PoCから商品化・運用までを一貫して前に進めます。ここでは“実務としてできること”を体系的に整理しています。</p>
+</div>
+<div class="skills-badges">
+<span class="sb wb-text wb-text--chip">PoC → Product → Operations</span>
+<span class="sb wb-text wb-text--chip">Engines: Unreal / Unity</span>
+<span class="sb wb-text wb-text--chip">Languages: C++ / C#</span>
+<span class="sb wb-text wb-text--chip">CI/CD: Jenkins / GitHub Actions</span>
+</div>
+<div class="skills-grid">
+<div class="panel skill-panel">
+<div class="panel-head">
+<div class="panel-ico">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M12 2l9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6l9-4Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Leadership &amp; Delivery</div>
+</div>
+<p class="toolbox-note wb-text wb-text--body">成功条件・制約・リスクを明確化し、設計判断と実行計画を整えて、チームが迷わず進める状態を作ります。</p>
+<ul class="skill-points leadership-list">
+<li class="wb-text wb-text--body"><div class="panel-subtitle wb-text wb-text--panel-subtitle">Technical Decision</div><div class="lead-chips"><span class="lead-chip strong wb-text wb-text--chip">要件定義</span><span class="lead-chip strong wb-text wb-text--chip">制約整理</span><span class="lead-chip strong wb-text wb-text--chip">リスク評価</span><span class="lead-chip strong wb-text wb-text--chip">構造化</span><span class="lead-chip strong wb-text wb-text--chip">設計方針策定</span><span class="lead-chip strong wb-text wb-text--chip">トレードオフ判断</span></div></li>
+<li class="wb-text wb-text--body"><div class="panel-subtitle wb-text wb-text--panel-subtitle">Execution</div><div class="lead-chips"><span class="lead-chip strong wb-text wb-text--chip">タスク分解</span><span class="lead-chip strong wb-text wb-text--chip">レビュー設計</span><span class="lead-chip strong wb-text wb-text--chip">進捗管理</span><span class="lead-chip strong wb-text wb-text--chip">リスク管理</span></div></li>
+<li class="wb-text wb-text--body"><div class="panel-subtitle wb-text wb-text--panel-subtitle">Stakeholder Alignment</div><div class="lead-chips"><span class="lead-chip strong wb-text wb-text--chip">技術論点の翻訳</span><span class="lead-chip strong wb-text wb-text--chip">合意形成</span><span class="lead-chip strong wb-text wb-text--chip">期待値コントロール</span><span class="lead-chip strong wb-text wb-text--chip">意思決定記録</span></div></li>
+</ul>
+</div>
+<div class="panel skill-panel">
+<div class="panel-head">
+<div class="panel-ico">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M8 7l-4 5 4 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M16 7l4 5-4 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M10 19l4-14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Engineering Expertise</div>
+</div>
+<p class="toolbox-note wb-text wb-text--body">アプリ／システムの構造設計から、リアルタイム要件のあるインタラクティブ領域、プラットフォーム実装まで対応します。</p>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Architecture</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Application / System Design</span><span class="pill strong wb-text wb-text--chip">API Design</span><span class="pill wb-text wb-text--chip">Module Boundary</span><span class="pill wb-text wb-text--chip">Data Flow</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Interactive / Engines</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Unreal Engine</span><span class="pill strong wb-text wb-text--chip">Unity</span>
+<span class="pill wb-text wb-text--chip">Rendering</span><span class="pill wb-text wb-text--chip">Animation</span><span class="pill wb-text wb-text--chip">Optimization</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Languages</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">C++</span><span class="pill wb-text wb-text--chip">C</span><span class="pill strong wb-text wb-text--chip">C#</span>
+<span class="pill wb-text wb-text--chip">JavaScript</span><span class="pill wb-text wb-text--chip">Python</span><span class="pill wb-text wb-text--chip">HTML/CSS</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Platform / Tooling</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">CI/CD Tooling</span><span class="pill wb-text wb-text--chip">Automation</span><span class="pill wb-text wb-text--chip">Build Systems</span><span class="pill wb-text wb-text--chip">Cross-platform</span>
+</div>
+</div>
+</div>
+</div>
+<div class="panel skill-panel skill-panel--full">
+<div class="panel-head">
+<div class="panel-ico">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M8 7V5h8v2" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Development Environment &amp; Process</div>
+</div>
+<p class="toolbox-note wb-text wb-text--body">実装だけでなく「開発を回す力」を重視し、品質と運用を継続的に改善できる仕組みを整備します。</p>
+<div class="toolbox-grid">
+<div class="toolbox-col">
+<div class="toolbox-head"><div class="toolbox-title panel-subtitle wb-text wb-text--panel-subtitle">CI/CD &amp; Automation</div><div class="toolbox-sub wb-text wb-text--sub">Build, test, deploy, and feedback loops</div></div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Jenkins</span><span class="pill strong wb-text wb-text--chip">GitHub Actions</span><span class="pill wb-text wb-text--chip">Build/Deploy</span><span class="pill wb-text wb-text--chip">Scripting</span><span class="pill wb-text wb-text--chip">JIRA</span><span class="pill wb-text wb-text--chip">Redmine</span>
+</div>
+</div>
+<div class="toolbox-col">
+<div class="toolbox-head"><div class="toolbox-title panel-subtitle wb-text wb-text--panel-subtitle">Quality &amp; Maintainability</div><div class="toolbox-sub wb-text wb-text--sub">Long-term health of codebases</div></div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Code Review</span><span class="pill strong wb-text wb-text--chip">Refactoring</span><span class="pill wb-text wb-text--chip">Testing</span><span class="pill strong wb-text wb-text--chip">Refactoring</span><span class="pill wb-text wb-text--chip">Design Docs</span>
+</div>
+</div>
+<div class="toolbox-col">
+<div class="toolbox-head"><div class="toolbox-title panel-subtitle wb-text wb-text--panel-subtitle">Observability &amp; Operations</div><div class="toolbox-sub wb-text wb-text--sub">Stability, monitoring, and recovery</div></div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Logging</span><span class="pill strong wb-text wb-text--chip">Debugging</span><span class="pill wb-text wb-text--chip">Runbooks</span><span class="pill wb-text wb-text--chip">Operational Improvement</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="skills-cta">
+<a class="skills-cta-btn wb-text wb-text--chip" href="#works">→ See how these skills are applied in WORKS</a>
+</div>
+</section>
+<section class="area bg-work fixed-bg" id="works">
+<div class="content works vworks">
+<div class="section-head">
+<h2 class="section-title wb-text wb-text--title">WORKS</h2>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">
+        代表的な取り組みの要約です（詳細は面談時にご説明します）。
+      </p>
+</div>
+<div aria-label="Works filters" class="works-toolbar">
+<button class="wchip is-active wb-text wb-text--chip" data-filter="all" type="button">ALL</button>
+<button class="wchip wb-text wb-text--chip" data-filter="ai" type="button">AI / PoC</button>
+<button class="wchip wb-text wb-text--chip" data-filter="vr" type="button">XR / Experience</button>
+<button class="wchip wb-text wb-text--chip" data-filter="vol" type="button">Volumetric</button>
+<button class="wchip wb-text wb-text--chip" data-filter="rt3d" type="button">Realtime 3D</button>
+<button class="wchip wb-text wb-text--chip" data-filter="platform" type="button">Platform / DevOps</button>
+</div>
+<div class="works-grid2" id="works-grid2">
+<article class="wcard" data-tags="ai">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">音声認識 × AI：エージェント系プロトタイプ開発／PoC</div>
+<div class="wbadges">
+<span class="wbadge wb-text wb-text--chip">Architecture</span>
+<span class="wbadge wb-text wb-text--chip">Implementation</span>
+<span class="wbadge wb-text wb-text--chip">Leading</span>
+</div>
+</div>
+<div aria-hidden="true" class="wicon">
+<svg viewbox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M7 11a5 5 0 0 0 10 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M12 16v5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M9 21h6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">
+          音声認識を軸としたAIアプリを短期間で形にし、仮説検証からPoC、実用化検討までを一気通貫で推進しました。
+        </p>
+<div class="wchips">
+<span class="tag wb-text wb-text--facet-label">Hypothesis Validation</span>
+<span class="tag wb-text wb-text--facet-label">Productization Mindset</span>
+<span class="tag wb-text wb-text--facet-label">Quality &amp; Reliability</span>
+</div>
+<details class="wdetails">
+<summary>Highlights</summary>
+<ul class="wlist">
+<li class="wb-text wb-text--body">技術選定・構成設計（意思決定ログ整理）</li>
+<li class="wb-text wb-text--body">プロトタイプ実装とユーザー検証の反復</li>
+<li class="wb-text wb-text--body">実運用を見据えた設計整理と改善提案</li>
+</ul>
+</details>
+</article>
+<article class="wcard" data-tags="vr">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">全天球VR：再生プラグイン／プロトアプリ開発</div>
+<div class="wbadges">
+<span class="wbadge wb-text wb-text--chip">Plugin</span>
+<span class="wbadge wb-text wb-text--chip">Unity</span>
+<span class="wbadge wb-text wb-text--chip">Prototyping</span>
+</div>
+</div>
+<div aria-hidden="true" class="wicon">
+<svg viewbox="0 0 24 24"><path d="M4 12c0-2.2 1.8-4 4-4h8c2.2 0 4 1.8 4 4v4H4v-4z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M8 16l-2 3M16 16l2 3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M9 12h2M13 12h2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">
+          Unityで再生系プラグインを実装し、プロトアプリで体験価値を検証。複数プラットフォームで成立性とUXを評価しました。
+        </p>
+<div class="wchips">
+<span class="tag wb-text wb-text--facet-label">Experience Validation</span>
+<span class="tag wb-text wb-text--facet-label">Feasibility</span>
+<span class="tag wb-text wb-text--facet-label">Cross-Platform</span>
+</div>
+<details class="wdetails">
+<summary>Highlights</summary>
+<ul class="wlist">
+<li class="wb-text wb-text--body">プラグイン実装担当の一人として再生機能を実装</li>
+<li class="wb-text wb-text--body">プロトアプリ作成によるUX・体験価値検証</li>
+<li class="wb-text wb-text--body">PlayStation / Windows / Android での検証・調整</li>
+</ul>
+</details>
+</article>
+<article class="wcard" data-tags="vol">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">Volumetric：再生ライブラリ／Player 開発</div>
+<div class="wbadges">
+<span class="wbadge wb-text wb-text--chip">Core</span>
+<span class="wbadge wb-text wb-text--chip">Performance</span>
+<span class="wbadge wb-text wb-text--chip">Stability</span>
+</div>
+</div>
+<div aria-hidden="true" class="wicon">
+<svg viewbox="0 0 24 24"><path d="M12 2l8 4v12l-8 4-8-4V6l8-4z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M12 2v20M4 6l8 4 8-4" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+</div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">
+          volume-based capture の再生コアを実装。再生品質・パフォーマンス・安定性を意識し、改善を継続しました。
+        </p>
+<div class="wchips">
+<span class="tag wb-text wb-text--facet-label">Core Library</span>
+<span class="tag wb-text wb-text--facet-label">Optimization</span>
+<span class="tag wb-text wb-text--facet-label">Playback Quality</span>
+</div>
+<details class="wdetails">
+<summary>Highlights</summary>
+<ul class="wlist">
+<li class="wb-text wb-text--body">再生パイプライン実装（コアロジック）</li>
+<li class="wb-text wb-text--body">パフォーマンス最適化と安定性改善</li>
+<li class="wb-text wb-text--body">検証・デバッグ・品質向上の反復</li>
+</ul>
+</details>
+</article>
+<article class="wcard" data-tags="rt3d">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">リアルタイム3D：コアプラグイン開発のアーキテクチャ／リーディング</div>
+<div class="wbadges">
+<span class="wbadge wb-text wb-text--chip">Architecture</span>
+<span class="wbadge wb-text wb-text--chip">Plugin Platform</span>
+<span class="wbadge wb-text wb-text--chip">Decision Making</span>
+</div>
+</div>
+<div aria-hidden="true" class="wicon">
+<svg viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path><path d="M7 9h4M13 15h4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path></svg>
+</div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">スポーツ映像/データのリアルタイム可視化を支えるコアプラグイン群について、設計・実装方針をリードし、拡張性と継続開発を前提としたプラグイン基盤を整備しました。責務分割、API設計、性能要件を踏まえた判断を行い、チームの実装品質を底上げしました。</p>
+<div class="wchips">
+<span class="tag wb-text wb-text--facet-label">Architecture Ownership</span>
+<span class="tag wb-text wb-text--facet-label">Extensibility</span>
+<span class="tag wb-text wb-text--facet-label">Review &amp; Alignment</span>
+</div>
+<details class="wdetails">
+<summary>Highlights</summary>
+<ul class="wlist">
+<li class="wb-text wb-text--body">プラグインのライフサイクル設計（ロード／初期化／更新／破棄）</li>
+<li class="wb-text wb-text--body">データモデルと拡張ポイントの設計（互換性・移行を考慮）</li>
+<li class="wb-text wb-text--body">責務分割・インターフェース設計の方針策定</li>
+<li class="wb-text wb-text--body">性能・拡張性を踏まえた技術選定</li>
+<li class="wb-text wb-text--body">レビュー・合意形成・方針共有によるリーディング</li>
+</ul>
+</details>
+</article>
+<article class="wcard" data-tags="platform">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">開発基盤／運用：CI/CD・課題管理・品質改善</div>
+<div class="wbadges">
+<span class="wbadge wb-text wb-text--chip">CI/CD</span>
+<span class="wbadge wb-text wb-text--chip">Automation</span>
+<span class="wbadge wb-text wb-text--chip">Operations</span>
+</div>
+</div>
+<div aria-hidden="true" class="wicon">
+<svg viewbox="0 0 24 24"><path d="M4 4h16v6H4z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M4 14h10v6H4z" fill="none" stroke="currentColor" stroke-width="2"></path><path d="M18 14h2v6h-2z" fill="none" stroke="currentColor" stroke-width="2"></path></svg>
+</div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">
+          継続的に開発できる状態を作るため、CI/CD、課題管理、運用改善を横断して推進。リードと実装の両面で改善しました。
+        </p>
+<div class="wchips">
+<span class="tag wb-text wb-text--facet-label">Pipeline</span>
+<span class="tag wb-text wb-text--facet-label">Process</span>
+<span class="tag wb-text wb-text--facet-label">Reliability</span>
+</div>
+<details class="wdetails">
+<summary>Highlights</summary>
+<ul class="wlist">
+<li class="wb-text wb-text--body">ビルド／テストの自動化と安定化</li>
+<li class="wb-text wb-text--body">課題管理（Redmine 等）の運用整備</li>
+<li class="wb-text wb-text--body">標準化・手順整備・継続的改善</li>
+</ul>
+</details>
+</article>
+</div>
+<p class="works-foot wb-text wb-text--body wb-text--muted wb-text--on-light">
+      実績は随時追加していきます。特定領域に偏らず、プロトタイプから運用改善まで横断して支援できます。
+    </p>
+<script id="works-filter">
+    (function(){
+      const toolbar = document.querySelector('.works-toolbar');
+      const cards = Array.from(document.querySelectorAll('.wcard'));
+      if(!toolbar || !cards.length) return;
+      function setActive(btn){
+        toolbar.querySelectorAll('.wchip').forEach(b=>b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+      }
+      function apply(filter){
+        cards.forEach(c=>{
+          const tags = (c.getAttribute('data-tags')||'').split(' ');
+          const show = (filter==='all') || tags.includes(filter);
+          c.style.display = show ? '' : 'none';
+        });
+      }
+      toolbar.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.wchip');
+        if(!btn) return;
+        const f = btn.getAttribute('data-filter') || 'all';
+        setActive(btn);
+        apply(f);
+      });
+      apply('all');
+    })();
+    </script>
+</div>
+</section>
+<section class="area bg-values fixed-bg" id="engagement">
+<div class="content">
+<h2 class="section-title wb-text wb-text--title">ENGAGEMENT</h2>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">プロジェクトのフェーズに応じて、アーキテクトとして設計・実装・意思決定まで責任を持って推進します。</p>
+<div class="eng-grid">
+<div class="eng-card">
+<div class="eng-card-head">
+<div class="panel-title wb-text wb-text--panel-title">Architecture Ownership</div>
+</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">要件・制約を整理し、全体設計と技術選定を行い、実装可能な形に落とし込みます。</p>
+</div>
+<div class="eng-card">
+<div class="eng-card-head">
+<div class="panel-title wb-text wb-text--panel-title">Hands-on Engineering</div>
+</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">プロトタイプから本実装まで、品質・性能・保守性を意識して手を動かします。</p>
+</div>
+<div class="eng-card">
+<div class="eng-card-head">
+<div class="panel-title wb-text wb-text--panel-title">Technical Leadership</div>
+</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">優先順位付け、合意形成、レビュー、プロセス整備まで含めてリードします。</p>
+</div>
+</div>
+<div class="eng-bottom">
+<div class="eng-panel">
+<div class="eng-subtitle sub-title wb-text wb-text--panel-title">主な成果物</div>
+<ul class="bullets eng-bullets wb-text wb-text--body wb-text--on-light">
+<li class="wb-text wb-text--body">アーキテクチャ設計（構成図／設計方針／意思決定ログ／基本設計・詳細設計／設計資料）</li>
+<li class="wb-text wb-text--body">実装（PR）／レビュー</li>
+<li class="wb-text wb-text--body">ロードマップ・優先順位のたたき台</li>
+<li class="wb-text wb-text--body">運用改善（自動化／標準化）</li>
+</ul>
+</div>
+<div class="eng-panel">
+<div class="eng-subtitle sub-title wb-text wb-text--panel-title">稼働について</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">時間ベース／成果物ベースいずれも相談可能です。まずは課題と期待値を共有ください。ご相談・お仕事のご依頼は、下部のフォームよりご連絡ください。</p>
+</div>
+</div>
+<div class="eng-cta"><a class="eng-cta-btn" href="#contact">CONTACTへ</a></div>
+</div>
+</section>
+<section class="area bg-contact fixed-bg" id="contact">
+<div class="content">
+<h2 class="section-title wb-text wb-text--title">CONTACT</h2>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">お仕事のご相談・ご依頼は、以下フォームまたはメールでご連絡ください。</p>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">フォームからのご連絡がスムーズです（必要に応じてメールでも可）。</p>
+<form action="https://formspree.io/f/mkorjbpn" class="contact-form" id="contact-form" method="POST">
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">お名前</span>
+<input class="cf-input" name="name" required="" type="text"/>
+</label>
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">メールアドレス</span>
+<input class="cf-input" name="email" required="" type="email"/>
+</label>
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">件名</span>
+<input class="cf-input" name="subject" required="" type="text"/>
+</label>
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">内容</span>
+<textarea class="cf-textarea" name="message" required="" rows="6"></textarea>
+</label>
+<div class="cf-actions">
+<button class="cf-submit" type="submit">送信</button>
+<div>
+<p aria-live="polite" class="cf-status wb-text wb-text--body" id="cf-status"></p>
+</div>
+</div>
+</form>
+<div class="contact-direct">
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light"><strong>またはメール：</strong> <a class="mail-link" data-domain="waffbell.com" data-user="contact" href="#">contact@waffbell.com</a></p>
+</div>
+<script id="contact-form-handler">
+  (function(){
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('cf-status');
+    if(!form || !status) return;
+
+    const okMsg = "\u9001\u4fe1\u3057\u307e\u3057\u305f\u3002\u3054\u9023\u7d61\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002";
+    const ngMsg = "\u9001\u4fe1\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002\u30e1\u30fc\u30eb\u3067\u3054\u9023\u7d61\u304f\u3060\u3055\u3044\u3002";
+    const sendingMsg = "\u9001\u4fe1\u4e2d\u2026";
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      status.textContent = sendingMsg;
+
+      try {
+        const endpoint = form.getAttribute('action') || '';
+        if(!endpoint || endpoint === 'FORM_ENDPOINT') {
+          status.textContent = ngMsg;
+          return;
+        }
+
+        const fd = new FormData(form);
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if(res.ok) {
+          form.reset();
+          status.textContent = okMsg;
+        } else {
+          status.textContent = ngMsg;
+        }
+      } catch(err) {
+        status.textContent = ngMsg;
+      }
+    });
+  })();
+  </script>
+</div>
+</section>
+</div>
+<footer class="site-footer"><div class="footer-inner"><a aria-label="Home" class="logo-name footer-logo" href="#top"><svg aria-label="WaffBell" role="img" viewbox="0 0 91 24"><text dominant-baseline="central" text-anchor="middle" x="45.5" y="12">WaffBell</text></svg></a><div class="footer-copy">© WaffBell. All rights reserved.</div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

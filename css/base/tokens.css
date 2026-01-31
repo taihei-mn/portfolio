@@ -1,0 +1,46 @@
+:root{
+  /* Logo sizing (header/footer) */
+  --wb-logo-box-w: 204px;
+  --wb-logo-box-h: 48px;
+  --wb-logo-svg-w: 160px;
+  --wb-logo-svg-h: 36px;
+  --wb-logo-text-size: 22px;
+
+  
+  --wb-section-pad-y: clamp(56px, 8vh, 104px);
+  --wb-section-pad-y-tight: clamp(28px, 5vh, 64px);
+  --wb-section-title-size: clamp(22px, 2.4vw, 28px);
+  --wb-section-title-gap: clamp(18px, 3vh, 26px);
+  --wb-section-title-line: rgba(255,255,255,.38);
+  --wb-section-title-color: rgba(255,189,49,.96);
+
+  --wb-panel-title-size: clamp(18px, 2.0vw, 22px);
+  --wb-panel-title-rainbow: linear-gradient(90deg, #ffbd31 0%, #ffd36a 18%, #a6d6ff 40%, #c5ffb5 62%, #d7b2ff 82%, #ffb0c4 100%);
+  --wb-debug-panel-title: #00e5ff;
+  --wb-debug-wcard-title: #ff4dff;
+  --wb-debug-panel-subtitle: #ffb020;
+  --wb-debug-sub-title: #7cff6b;
+  --wb-sub-title-size: clamp(13px, 1.6vw, 15px);
+
+  --wb-bg: #0f1115;
+  --wb-bg-2: #141823;
+  --wb-panel: rgba(20,24,35,.72);
+  --wb-text: #f5f7fb;
+  --wb-muted: rgba(245,247,251,.72);
+  --wb-line: rgba(255,255,255,.10);
+  --wb-yellow: #ffbd31;
+  --wb-yellow-2: #ffd36a;
+  --wb-shadow: 0 12px 30px rgba(0,0,0,.35);
+  --wb-radius: 14px;
+  --wb-font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  
+  --header-offset: 84px;
+}
+
+:root{
+  --chip-bg: rgba(255,255,255,0.05);
+  --chip-bd: rgba(255,255,255,0.14);
+  --chip-strong-bg: rgba(255,255,255,0.10);
+  --chip-strong-bd: rgba(255,255,255,0.28);
+  --chip-strong-glow: rgba(255,255,255,0.18);
+}

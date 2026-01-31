@@ -1,0 +1,15 @@
+#engagement{
+  background: transparent !important;
+}
+#engagement ul.bullets{
+  list-style: none !important;
+  padding-left: 0 !important;
+}
+#engagement ul.bullets li:before{
+  display: none !important;
+  content: none !important;
+}
+
+@media (min-width: 1024px){
+  #engagement .panel-body{max-width:960px;margin-inline:auto;}
+}

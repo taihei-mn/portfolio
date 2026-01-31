@@ -1,0 +1,216 @@
+.lang-switch{
+  display: inline-flex;
+  gap: 6px;
+  border: 1px solid var(--wb-line);
+  border-radius: 999px;
+  padding: 4px;
+  background: var(--chip-bg);
+}
+
+.lang-switch .lang{
+  font-family: var(--wb-font);
+  font-size: 12px;
+  letter-spacing: .4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: var(--wb-muted);
+  text-decoration: none;
+}
+
+.lang-switch .lang.current{
+  color: var(--wb-on-accent);
+  background: var(--wb-accent);
+}
+
+.sidebar-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s ease;
+  z-index: 40;
+}
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  max-width: calc(100vw - 56px);
+  height: 100vh;
+  transform: translateX(-105%);
+  transition: transform .22s ease;
+  background: rgba(15,17,21,.92);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid var(--wb-line);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.is-open{ transform: translateX(0); }
+
+.sidebar-backdrop.is-open{ opacity: 1; pointer-events: auto; }
+
+.sidebar-head{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px 10px 14px;
+  border-bottom: 1px solid var(--wb-line);
+}
+
+.sidebar-title{
+  font-family: var(--wb-font);
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: var(--wb-muted);
+}
+
+.sidebar-close{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--wb-line);
+  background: var(--chip-bg);
+  color: var(--wb-text);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+
+.sidebar-tools{
+  padding: 10px 14px 12px 14px;
+  border-bottom: 1px solid var(--wb-line);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.sidebar-theme-toggle{
+  /* Do not override the intrinsic switch size; just prevent flex stretching */
+  align-self: center;
+  flex: 0 0 auto;
+}
+.sidebar-nav{
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+}
+
+.sidebar-link{
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-family: var(--wb-font);
+  font-weight: 650;
+  letter-spacing: .3px;
+  color: var(--wb-text);
+  border: 1px solid transparent;
+}
+
+.sidebar-link:hover{
+  background: rgba(255,255,255,.06);
+  border-color: var(--wb-line);
+}
+
+.sidebar-link.is-active{
+  background: var(--wb-accent);
+  color: #0f1115;
+}
+
+.topnav{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.topnav-link.is-active{
+  color: #0f1115;
+  background: var(--wb-accent);
+  border-color: var(--wb-accent-soft);
+}
+
+@media (max-width: 900px){
+  .topnav{ display: none !important; }
+}
+
+@media (min-width: 901px){
+  .sidebar, .sidebar-backdrop{ display: none !important; }
+}
+
+
+/* Light theme: sidebar surfaces should be warm (no dark panels) */
+:root[data-theme="light"] .sidebar-backdrop{
+  background: rgba(42,31,23,.32);
+}
+:root[data-theme="light"] .sidebar{
+  background: rgba(255,253,248,.96);
+  border-right-color: var(--wb-border);
+}
+:root[data-theme="light"] .sidebar-link{
+  color: var(--wb-text);
+}
+:root[data-theme="light"] .sidebar-link:hover{
+  background: rgba(192,85,43,0.08);
+  border-color: rgba(192,85,43,0.18);
+}
+:root[data-theme="light"] .sidebar-link.is-active{
+  background: var(--wb-accent);
+  color: var(--wb-on-accent);
+}
+
+
+/* Sidebar theme tool (mobile) */
+.sidebar-tools{
+  padding: 10px 14px 12px 14px;
+  border-bottom: 1px solid var(--wb-line);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.sidebar-tool-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--wb-border);
+  background: var(--wb-panel);
+}
+.sidebar-tool-label{
+  font-size: 13px;
+  letter-spacing: .02em;
+  color: var(--wb-text-muted);
+}
+.sidebar-theme-toggle.theme-switch{
+  flex: 0 0 auto;
+  border-color: color-mix(in srgb, var(--wb-border) 75%, transparent);
+  background: transparent;
+}
+
+
+.sidebar-theme-label{
+  font-family: var(--wb-font);
+  font-weight: 650;
+  letter-spacing: .2px;
+  color: var(--wb-text);
+  font-size: 14px;
+  opacity: .9;
+}
+:root[data-theme="light"] .sidebar-theme-label{
+  color: rgba(20,20,20,0.88);
+}

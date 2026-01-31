@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* ABOUT section: career timeline formatting (Year / Title / Body) */
+#about .timeline{
+  display: grid;
+  gap: 12px;
+}
+
+#about .timeline-item{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 14px;
+  border-radius: calc(var(--wb-radius) + 4px);
+  background: var(--wb-panel);
+  border: 1px solid var(--wb-line);
+}
+
+/* Year chip */
+#about .timeline-meta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* center text inside */
+  align-self: flex-start; /* chip itself left-aligned */
+  padding: .2em .55em;
+  border-radius: 999px;
+  line-height: 1.1;
+}
+
+/* Body: title then description */
+#about .timeline-body{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#about .timeline-body .panel-subtitle{
+  margin: 0;
+}
+
+#about .timeline-desc{
+  margin: 0;
+}

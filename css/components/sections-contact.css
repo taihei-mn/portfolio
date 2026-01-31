@@ -1,0 +1,113 @@
+.contact-form{
+  margin-top: 18px;
+  padding: 18px 18px 14px;
+  border: 1px solid var(--wb-accent-soft);
+  border-radius: 18px;
+  background: var(--wb-panel);
+  backdrop-filter: blur(6px);
+  max-width: 820px;
+}
+.cf-field{ display:block; margin-bottom: 12px; }.cf-label{
+  display:block;
+  margin: 0 0 8px 2px;}
+.cf-input,.cf-textarea{
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 1px solid var(--wb-input-border, rgba(255,255,255,.16));
+  background: var(--wb-input-bg, var(--wb-bg-2));
+  color: var(--wb-input-text, rgba(255,255,255,.92));
+  padding: 12px 12px;
+  outline: none;
+}
+.cf-input:focus,.cf-textarea:focus{
+  border-color: var(--wb-input-border-focus, var(--wb-accent-soft));
+  box-shadow: 0 0 0 3px var(--wb-input-focus-ring, var(--wb-accent-soft));
+}
+.cf-actions{
+  display:flex;
+  align-items:flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+.cf-submit{
+  border-radius: 999px;
+  border: 1px solid var(--wb-accent);
+  color: var(--wb-accent-strong);
+  background: transparent;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.cf-submit:hover{
+  background: var(--wb-accent-strong);
+  color: rgba(0,0,0,.9);
+  transform: translateY(-1px);
+}.cf-status{
+  margin: 10px 0 0;}
+.contact-direct{
+  margin-top: 16px;
+  max-width: 820px;
+}
+.contact-direct .mail-link, .contact-direct a[href^="mailto:"]{
+  color: var(--wb-accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid var(--wb-accent-soft);
+}
+.contact-direct .mail-link:hover, .contact-direct a[href^="mailto:"]:hover{
+  border-bottom-color: var(--wb-accent);
+}
+.contact-form.cf-invalid .cf-input,
+.contact-form.cf-invalid .cf-textarea{
+  border-color: rgba(255,120,120,.6);
+}
+.contact-direct{
+  opacity: .92;
+}
+.eng-cta-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--wb-accent);
+  color: var(--wb-accent-strong);
+  text-decoration:none;
+  background: transparent;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+.eng-cta-btn:hover{
+  background: var(--wb-accent-strong);
+  color: rgba(0,0,0,.9);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px){
+  }
+
+
+/* Prevent browser autofill from painting bright backgrounds on form text fields */
+.cf-input:-webkit-autofill,
+.cf-input:-webkit-autofill:hover,
+.cf-input:-webkit-autofill:focus,
+.cf-textarea:-webkit-autofill,
+.cf-textarea:-webkit-autofill:hover,
+.cf-textarea:-webkit-autofill:focus{
+  -webkit-text-fill-color: rgba(255,255,255,.92);
+  box-shadow: 0 0 0px 1000px rgba(0,0,0,.22) inset;
+  transition: background-color 9999s ease-out 0s;
+}
+
+/* Form field labels should not look like chips (no pill background). */
+.contact-form .cf-label.wb-text--chip{
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  display: block;
+  margin: 0 0 6px;
+  color: rgba(255,255,255,0.88);
+}

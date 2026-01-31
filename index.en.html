@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+
+<script id="wb-theme-init">
+(function(){
+  try{
+    var t = localStorage.getItem('wb-theme');
+    t = (t === 'light' || t === 'dark') ? t : null;
+    if(!t){
+      try{
+        t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }catch(e){ t='dark'; }
+    }
+    document.documentElement.dataset.theme = t;
+    // Back-compat classes used by some CSS
+    document.addEventListener('DOMContentLoaded', function(){
+      document.body.classList.toggle('dark-theme', t === 'dark');
+      document.body.classList.toggle('light-theme', t === 'light');
+    });
+  }catch(e){}
+})();
+</script>
+
+<meta charset="utf-8" content="IE=Edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<title>WaffBell | Portfolio (EN)</title>
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div aria-label="Opening" class="opening" id="opening" role="dialog"><canvas id="opening-canvas"></canvas></div>
+<canvas aria-hidden="true" id="bg-constellation"></canvas>
+<header class="header">
+<div aria-hidden="true" class="bg-header"></div>
+<div class="header-inner">
+<div class="header-left">
+<button aria-expanded="false" aria-label="Open menu" class="menu-button" id="sidebar-open" type="button">
+<span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+</button>
+<a aria-label="Home" class="logo-name" href="#top">
+<svg aria-label="WaffBell" role="img" viewbox="0 0 91 24"><text dominant-baseline="central" text-anchor="middle" x="45.5" y="12">WaffBell</text></svg>
+</a>
+</div>
+<nav aria-label="Top navigation" class="topnav">
+<a href="#top">TOP</a><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#works">WORKS</a><a href="#engagement">ENGAGEMENT</a><a href="#contact">CONTACT</a>
+</nav>
+<div class="header-right">
+<div class="lang-switch"><a class="lang" href="index.html">JP</a><a class="lang current" href="index.en.html">EN</a></div>
+<button class="theme-toggle theme-switch" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme" role="switch" aria-checked="false" data-theme-toggle="1"><span class="theme-switch__track" aria-hidden="true"><span class="theme-switch__thumb" aria-hidden="true"></span></span><span class="sr-only" id="theme-toggle-label">Toggle theme</span></button>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="sidebar-backdrop" id="sidebar-backdrop"></div>
+<aside aria-label="Site navigation" class="sidebar" id="sidebar">
+<div class="sidebar-head">
+<div class="sidebar-title wb-text wb-text--panel-title">MENU</div>
+<button aria-label="Close menu" class="sidebar-close" id="sidebar-close" type="button">×</button>
+</div>
+<div class="sidebar-tools">
+  <div class="sidebar-tool-row"><div class="sidebar-tool-label">Theme</div><button class="theme-toggle theme-switch sidebar-theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme" role="switch" aria-checked="false" data-theme-toggle="1">
+    <span class="theme-switch__track" aria-hidden="true"><span class="theme-switch__thumb" aria-hidden="true"></span></span>
+    <span class="sr-only">Toggle theme</span>
+  </button></div>
+</div>
+<nav aria-label="Sidebar navigation" class="sidebar-nav">
+<a class="sidebar-link" href="#top">TOP</a>
+<a class="sidebar-link" href="#about">ABOUT</a>
+<a class="sidebar-link" href="#skills">SKILLS</a>
+<a class="sidebar-link" href="#works">WORKS</a>
+<a class="sidebar-link" href="#engagement">ENGAGEMENT</a>
+<a class="sidebar-link" href="#contact">CONTACT</a>
+</nav>
+</aside>
+<div class="container">
+<section class="area bg-top fixed-bg" id="top">
+<div class="top-hero">
+<div class="top-hero__inner">
+<div class="top-hero__copy">
+<p class="top-hero__kicker sub-title wb-text wb-text--kicker">WaffBell</p>
+<h1 class="top-hero__headline wb-text wb-text--title">Technical Lead / Software Engineer</h1>
+<p class="top-hero__sub wb-text wb-text--body">I lead end-to-end delivery across real-time 3D, platform engineering, and CI/CD—from problem framing to architecture, implementation, and operational excellence.<br/>I turn complexity into shippable value with clear decisions and clean execution.</p>
+<div class="top-hero__cta">
+<a class="btn btn-primary" href="#works">View WORKS</a>
+<a class="btn btn-ghost" href="#contact">Contact</a>
+</div>
+</div>
+<div class="top-hero__cards">
+<div class="top-card">
+<div class="top-card__head">
+<div class="top-card__icon">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M4 20V9l8-5 8 5v11" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 22V12h6v10" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Architecture &amp; Decision Making</div>
+</div>
+<p class="wb-text wb-text--body">Clarify constraints and trade-offs, then commit to the right architecture and priorities.</p>
+</div>
+<div class="top-card">
+<div class="top-card__head">
+<div class="top-card__icon">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M12 3v6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M6 9h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M8 9v12h8V9" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M7 21h10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">End-to-End Technical Leadership</div>
+</div>
+<p class="wb-text wb-text--body">Lead across phases—from prototype/PoC to productization and operations—with clear decisions and execution.</p>
+</div>
+<div class="top-card">
+<div class="top-card__head">
+<div class="top-card__icon">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M8 3h8l2 6v12H6V9l2-6Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 13h6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 17h6" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Productization &amp; Operational Quality</div>
+</div>
+<p class="wb-text wb-text--body">Build quality into the system and keep improving with CI/CD and observability.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="area bg-news fixed-bg" id="about">
+<div class="content about">
+<div class="section-head">
+<h2 class="section-title wb-text wb-text--title">ABOUT</h2>
+</div>
+<div class="panel about-hero">
+<p class="about-kicker sub-title wb-text wb-text--kicker">Profile</p>
+<div class="about-title panel-title wb-text wb-text--panel-title">Background &amp; approach</div>
+<p class="about-intro wb-text wb-text--body">Since 2017, I have worked across real-time 3D (Unreal Engine / C++), development platforms (CI/CD), and operational improvements in entertainment and sports domains.</p>
+<p class="about-intro wb-text wb-text--body">From early prototyping and PoC through productization and operations, I lead requirement clarification, technical decision-making, and quality uplift for long-running systems.</p>
+</div>
+<div class="about-grid">
+<div class="about-block">
+<div class="block-title wl-title panel-title wb-text wb-text--panel-title">WHAT I LEAD</div>
+<div class="lead-stack">
+<div class="lead-row axis-leadership">
+<div class="lead-icon">
+<svg aria-hidden="true" class="lead-ico" viewbox="0 0 24 24">
+<path d="M4 20V9l8-5 8 5v11" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="lead-body">
+<div class="lead-title panel-subtitle wb-text wb-text--panel-subtitle">Architecture &amp; Decision Making</div><p class="lead-desc wb-text wb-text--body">Clarify requirements, constraints, and risks; then make the design and priority calls.</p>
+<ul class="lead-list">
+<li class="wb-text wb-text--body">State management and data-flow design</li>
+<li class="wb-text wb-text--body">API and module boundary definition</li>
+<li class="wb-text wb-text--body">Trade-offs across performance, quality, and timelines</li>
+</ul>
+</div>
+</div>
+<div class="lead-row axis-engineering">
+<div class="lead-icon">
+<svg aria-hidden="true" class="lead-ico" viewbox="0 0 24 24">
+<path d="M12 3v6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M6 9h12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M7 20h10" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M8 20V9m8 11V9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="lead-body">
+<div class="lead-title panel-subtitle wb-text wb-text--panel-subtitle">End-to-End Technical Leadership</div><p class="lead-desc wb-text wb-text--body">Led prototyping of a speech-recognition-based AI agent, using JavaScript, Android, and Linux environments to iterate rapidly through early hypothesis validation and technical feasibility checks.</p>
+<ul class="lead-list">
+<li class="wb-text wb-text--body">Prototype → product transition design</li>
+<li class="wb-text wb-text--body">Quality bar definition and review process</li>
+<li class="wb-text wb-text--body">Alignment, risk management, and execution planning</li>
+</ul>
+</div>
+</div>
+<div class="lead-row axis-process">
+<div class="lead-icon">
+<svg aria-hidden="true" class="lead-ico" viewbox="0 0 24 24">
+<path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M9 15h6" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M8 7V5h8v2" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="lead-body">
+<div class="lead-title panel-subtitle wb-text wb-text--panel-subtitle">Productization &amp; Operational Quality</div><p class="lead-desc wb-text wb-text--body">Build for “keep running”: improve operational quality and continuous improvement loops.</p>
+<ul class="lead-list">
+<li class="wb-text wb-text--body">Stable operations through CI/CD and automation</li>
+<li class="wb-text wb-text--body">Observability and debugging readiness</li>
+<li class="wb-text wb-text--body">Standardized procedures and iterative improvement</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="about-block">
+<div class="block-title panel-title wb-text wb-text--panel-title">CAREER TIMELINE</div>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-meta">2017–</div>
+<div class="timeline-body">
+<div class="panel-subtitle wb-text wb-text--panel-subtitle">Implementation</div>
+<div class="timeline-desc wb-text wb-text--body">Delivered prototypes and technical validations in cutting-edge areas, learning rapid feedback cycles.</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-meta">2020–</div>
+<div class="timeline-body">
+<div class="panel-subtitle wb-text wb-text--panel-subtitle">Architecture</div>
+<div class="timeline-desc wb-text wb-text--body">Designed scalable structures for multi-feature, long-running systems with maintainable operations.</div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-meta">2023–</div>
+<div class="timeline-body">
+<div class="panel-subtitle wb-text wb-text--panel-subtitle">Technical Leadership</div>
+<div class="timeline-desc wb-text wb-text--body">Led technical decisions, alignment, review practices, and risk management to drive delivery.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="area bg-about fixed-bg dark-point" id="skills">
+<div class="content skills">
+<div class="section-head">
+<h2 class="section-title wb-text wb-text--title">SKILLS</h2>
+</div>
+<div class="skills-intro">
+<p class="wb-text wb-text--body">I combine deep engineering expertise with strong decision-making and delivery. Below is a structured view of what I can execute in practice—from PoC to productization and operations.</p>
+</div>
+<div class="skills-badges">
+<span class="sb wb-text wb-text--chip">PoC → Product → Operations</span>
+<span class="sb wb-text wb-text--chip">Engines: Unreal / Unity</span>
+<span class="sb wb-text wb-text--chip">Languages: C++ / C#</span>
+<span class="sb wb-text wb-text--chip">CI/CD: Jenkins / GitHub Actions</span>
+</div>
+<div class="skills-grid">
+<div class="panel skill-panel">
+<div class="panel-head">
+<div class="panel-ico">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M12 2l9 4v6c0 5-4 9-9 10C7 21 3 17 3 12V6l9-4Z" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Leadership &amp; Delivery</div>
+</div>
+<p class="toolbox-note wb-text wb-text--body">Translate constraints into decisions, build executable plans, and create a team environment that moves with clarity.</p>
+<ul class="skill-points leadership-list">
+<li class="wb-text wb-text--body"><div class="panel-subtitle wb-text wb-text--panel-subtitle">Technical Decision</div><div class="lead-chips"><span class="lead-chip strong wb-text wb-text--chip">Requirements</span><span class="lead-chip strong wb-text wb-text--chip">Constraints</span><span class="lead-chip strong wb-text wb-text--chip">Risk assessment</span><span class="lead-chip strong wb-text wb-text--chip">Structuring</span><span class="lead-chip strong wb-text wb-text--chip">Design direction</span><span class="lead-chip strong wb-text wb-text--chip">Trade-offs</span></div></li>
+<li class="wb-text wb-text--body"><div class="panel-subtitle wb-text wb-text--panel-subtitle">Execution</div><div class="lead-chips"><span class="lead-chip strong wb-text wb-text--chip">Task breakdown</span><span class="lead-chip strong wb-text wb-text--chip">Review design</span><span class="lead-chip strong wb-text wb-text--chip">Progress tracking</span><span class="lead-chip strong wb-text wb-text--chip">Risk management</span></div></li>
+<li class="wb-text wb-text--body"><div class="panel-subtitle wb-text wb-text--panel-subtitle">Stakeholder Alignment</div><div class="lead-chips"><span class="lead-chip strong wb-text wb-text--chip">Issue framing</span><span class="lead-chip strong wb-text wb-text--chip">Alignment</span><span class="lead-chip strong wb-text wb-text--chip">Expectation control</span><span class="lead-chip strong wb-text wb-text--chip">Decision log</span></div></li>
+</ul>
+</div>
+<div class="panel skill-panel">
+<div class="panel-head">
+<div class="panel-ico">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M8 7l-4 5 4 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M16 7l4 5-4 5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M10 19l4-14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Engineering Expertise</div>
+</div>
+<p class="toolbox-note wb-text wb-text--body">From architecture to interactive real-time systems, plus platform/tooling for developers.</p>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Architecture</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Application / System Design</span><span class="pill strong wb-text wb-text--chip">API Design</span><span class="pill wb-text wb-text--chip">Module Boundary</span><span class="pill wb-text wb-text--chip">Data Flow</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Interactive / Engines</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Unreal Engine</span><span class="pill strong wb-text wb-text--chip">Unity</span>
+<span class="pill wb-text wb-text--chip">Rendering</span><span class="pill wb-text wb-text--chip">Animation</span><span class="pill wb-text wb-text--chip">Optimization</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Languages</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">C++</span><span class="pill wb-text wb-text--chip">C</span><span class="pill strong wb-text wb-text--chip">C#</span>
+<span class="pill wb-text wb-text--chip">JavaScript</span><span class="pill wb-text wb-text--chip">Python</span><span class="pill wb-text wb-text--chip">HTML/CSS</span>
+</div>
+</div>
+<div class="skill-group">
+<div class="skill-group__title panel-subtitle wb-text wb-text--panel-subtitle">Platform / Tooling</div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">CI/CD Tooling</span><span class="pill wb-text wb-text--chip">Automation</span><span class="pill wb-text wb-text--chip">Build Systems</span><span class="pill wb-text wb-text--chip">Cross-platform</span>
+</div>
+</div>
+</div>
+</div>
+<div class="panel skill-panel skill-panel--full">
+<div class="panel-head">
+<div class="panel-ico">
+<svg aria-hidden="true" class="mini-ico" viewbox="0 0 24 24">
+<path d="M4 7h16v10H4z" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M8 7V5h8v2" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path d="M7 12h10" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<div class="panel-title wb-text wb-text--panel-title">Development Environment &amp; Process</div>
+</div>
+<p class="toolbox-note wb-text wb-text--body">Build the “system around development”: automation, quality guardrails, and operational readiness.</p>
+<div class="toolbox-grid">
+<div class="toolbox-col">
+<div class="toolbox-head"><div class="toolbox-title panel-subtitle wb-text wb-text--panel-subtitle">CI/CD &amp; Automation</div><div class="toolbox-sub wb-text wb-text--sub">Build, test, deploy, and feedback loops</div></div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Jenkins</span><span class="pill strong wb-text wb-text--chip">GitHub Actions</span><span class="pill wb-text wb-text--chip">Build/Deploy</span><span class="pill wb-text wb-text--chip">Scripting</span><span class="pill wb-text wb-text--chip">JIRA</span><span class="pill wb-text wb-text--chip">Redmine</span>
+</div>
+</div>
+<div class="toolbox-col">
+<div class="toolbox-head"><div class="toolbox-title panel-subtitle wb-text wb-text--panel-subtitle">Quality &amp; Maintainability</div><div class="toolbox-sub wb-text wb-text--sub">Long-term health of codebases</div></div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Code Review</span><span class="pill strong wb-text wb-text--chip">Refactoring</span><span class="pill wb-text wb-text--chip">Testing</span><span class="pill strong wb-text wb-text--chip">Refactoring</span><span class="pill wb-text wb-text--chip">Design Docs</span>
+</div>
+</div>
+<div class="toolbox-col">
+<div class="toolbox-head"><div class="toolbox-title panel-subtitle wb-text wb-text--panel-subtitle">Observability &amp; Operations</div><div class="toolbox-sub wb-text wb-text--sub">Stability, monitoring, and recovery</div></div>
+<div class="pills">
+<span class="pill strong wb-text wb-text--chip">Logging</span><span class="pill strong wb-text wb-text--chip">Debugging</span><span class="pill wb-text wb-text--chip">Runbooks</span><span class="pill wb-text wb-text--chip">Operational Improvement</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="skills-cta">
+<a class="skills-cta-btn wb-text wb-text--chip" href="#works">→ See how these skills are applied in WORKS</a>
+</div>
+</section>
+<section class="area bg-work fixed-bg" id="works">
+<div class="content works vworks">
+<div class="section-head">
+<h2 class="section-title wb-text wb-text--title">WORKS</h2>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">
+        A curated snapshot of selected work (details available in an interview). This section is designed to grow as new projects are added.
+      </p>
+</div>
+<div aria-label="Works filters" class="works-toolbar">
+<button class="wchip is-active wb-text wb-text--chip" data-filter="all" type="button">ALL</button>
+<button class="wchip wb-text wb-text--chip" data-filter="ai" type="button">AI / PoC</button>
+<button class="wchip wb-text wb-text--chip" data-filter="vr" type="button">XR / Experience</button>
+<button class="wchip wb-text wb-text--chip" data-filter="vol" type="button">Volumetric</button>
+<button class="wchip wb-text wb-text--chip" data-filter="rt3d" type="button">Realtime 3D</button>
+<button class="wchip wb-text wb-text--chip" data-filter="platform" type="button">Platform / DevOps</button>
+</div>
+<div class="works-grid2" id="works-grid2">
+<article class="wcard" data-tags="ai">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">Speech Recognition × AI: Agent-style Prototyping / PoC</div>
+<div class="wbadges"><span class="wbadge wb-text wb-text--chip">Architecture</span><span class="wbadge wb-text wb-text--chip">Implementation</span><span class="wbadge wb-text wb-text--chip">Leading</span></div>
+</div>
+<div aria-hidden="true" class="wicon"></div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">Rapidly built speech-driven AI application prototypes and drove hypothesis validation through PoC toward productization.</p>
+<div class="wchips"><span class="tag wb-text wb-text--facet-label">Hypothesis Validation</span><span class="tag wb-text wb-text--facet-label">Productization Mindset</span><span class="tag wb-text wb-text--facet-label">Quality &amp; Reliability</span></div>
+<details class="wdetails"><summary>Highlights</summary>
+<ul class="wlist"><li class="wb-text wb-text--body">Architecture and technology selection</li><li class="wb-text wb-text--body">Iterative prototype implementation and user validation</li><li class="wb-text wb-text--body">Design refinement for real-world usage</li></ul>
+</details>
+</article>
+<article class="wcard" data-tags="vr">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">360° VR Playback: Plugin / Prototype App</div>
+<div class="wbadges"><span class="wbadge wb-text wb-text--chip">Plugin</span><span class="wbadge wb-text wb-text--chip">Unity</span><span class="wbadge wb-text wb-text--chip">Prototyping</span></div>
+</div>
+<div aria-hidden="true" class="wicon"></div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">Implemented Unity playback plugins and built prototype apps to validate experience value and feasibility across platforms.</p>
+<div class="wchips"><span class="tag wb-text wb-text--facet-label">Experience Validation</span><span class="tag wb-text wb-text--facet-label">Feasibility</span><span class="tag wb-text wb-text--facet-label">Cross-Platform</span></div>
+<details class="wdetails"><summary>Highlights</summary>
+<ul class="wlist"><li class="wb-text wb-text--body">Playback plugin implementation (one of the contributors)</li><li class="wb-text wb-text--body">Prototype app development for UX validation</li><li class="wb-text wb-text--body">Validation across PlayStation / Windows / Android</li></ul>
+</details>
+</article>
+<article class="wcard" data-tags="vol">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">Volumetric Playback Library / Player</div>
+<div class="wbadges"><span class="wbadge wb-text wb-text--chip">Core</span><span class="wbadge wb-text wb-text--chip">Performance</span><span class="wbadge wb-text wb-text--chip">Stability</span></div>
+</div>
+<div aria-hidden="true" class="wicon"></div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">Developed core playback components for volume-based capture with an emphasis on quality, performance, and stability.</p>
+<div class="wchips"><span class="tag wb-text wb-text--facet-label">Core Library</span><span class="tag wb-text wb-text--facet-label">Optimization</span><span class="tag wb-text wb-text--facet-label">Playback Quality</span></div>
+<details class="wdetails"><summary>Highlights</summary>
+<ul class="wlist"><li class="wb-text wb-text--body">Core playback pipeline implementation</li><li class="wb-text wb-text--body">Performance optimization and stabilization</li><li class="wb-text wb-text--body">Validation and debugging cycles</li></ul>
+</details>
+</article>
+<article class="wcard" data-tags="rt3d">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">Real-time 3D: Core Plugin Architecture / Leadership</div>
+<div class="wbadges"><span class="wbadge wb-text wb-text--chip">Architecture</span><span class="wbadge wb-text wb-text--chip">Plugin Platform</span><span class="wbadge wb-text wb-text--chip">Decision Making</span></div>
+</div>
+<div aria-hidden="true" class="wicon"></div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">Led architecture and decision-making for a core plugin platform powering real-time sports visualization, defining responsibilities, APIs, and performance considerations to enable sustainable development and extensibility.</p>
+<div class="wchips"><span class="tag wb-text wb-text--facet-label">Architecture Ownership</span><span class="tag wb-text wb-text--facet-label">Extensibility</span><span class="tag wb-text wb-text--facet-label">Review &amp; Alignment</span></div>
+<details class="wdetails"><summary>Highlights</summary>
+<ul class="wlist">
+<li class="wb-text wb-text--body">Plugin lifecycle design (load / init / update / teardown)</li>
+<li class="wb-text wb-text--body">Data model and extension points with compatibility in mind</li>
+<li class="wb-text wb-text--body">Responsibility and interface design principles</li><li class="wb-text wb-text--body">Technology decisions for performance and scalability</li><li class="wb-text wb-text--body">Leadership through reviews and alignment</li></ul>
+</details>
+</article>
+<article class="wcard" data-tags="platform">
+<header class="wcard-head">
+<div class="wcard-meta">
+<div class="wcard-title wb-text wb-text--panel-title">Platform / Operations: CI/CD, Issue Tracking, Quality Improvements</div>
+<div class="wbadges"><span class="wbadge wb-text wb-text--chip">CI/CD</span><span class="wbadge wb-text wb-text--chip">Automation</span><span class="wbadge wb-text wb-text--chip">Operations</span></div>
+</div>
+<div aria-hidden="true" class="wicon"></div>
+</header>
+<p class="wcard-lead wb-text wb-text--body">Improved delivery reliability by driving CI/CD, issue tracking practices, and operational improvements end-to-end.</p>
+<div class="wchips"><span class="tag wb-text wb-text--facet-label">Pipeline</span><span class="tag wb-text wb-text--facet-label">Process</span><span class="tag wb-text wb-text--facet-label">Reliability</span></div>
+<details class="wdetails"><summary>Highlights</summary>
+<ul class="wlist"><li class="wb-text wb-text--body">Build/test automation and stabilization</li><li class="wb-text wb-text--body">Issue tracking operations (e.g., Redmine)</li><li class="wb-text wb-text--body">Standardization and documentation</li></ul>
+</details>
+</article>
+</div>
+<p class="works-foot wb-text wb-text--body wb-text--muted wb-text--on-light">
+      This section grows over time as new projects are added. I can support across phases—from prototypes to operational excellence.
+    </p>
+<script id="works-filter">
+    (function(){
+      const toolbar = document.querySelector('.works-toolbar');
+      const cards = Array.from(document.querySelectorAll('.wcard'));
+      if(!toolbar || !cards.length) return;
+      function setActive(btn){
+        toolbar.querySelectorAll('.wchip').forEach(b=>b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+      }
+      function apply(filter){
+        cards.forEach(c=>{
+          const tags = (c.getAttribute('data-tags')||'').split(' ');
+          const show = (filter==='all') || tags.includes(filter);
+          c.style.display = show ? '' : 'none';
+        });
+      }
+      toolbar.addEventListener('click', (e)=>{
+        const btn = e.target.closest('.wchip');
+        if(!btn) return;
+        const f = btn.getAttribute('data-filter') || 'all';
+        setActive(btn);
+        apply(f);
+      });
+      apply('all');
+    })();
+    </script>
+</div>
+</section>
+<section class="area bg-values fixed-bg" id="engagement">
+<div class="content">
+<h2 class="section-title wb-text wb-text--title">ENGAGEMENT</h2>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">Depending on the project phase, I take ownership as an architect—designing, implementing, and driving key technical decisions.</p>
+<div class="eng-grid">
+<div class="eng-card">
+<div class="eng-card-head">
+<div class="panel-title wb-text wb-text--panel-title">Architecture Ownership</div>
+</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">Frame requirements and constraints, decide architecture and technology choices, and translate them into implementable plans.</p>
+</div>
+<div class="eng-card">
+<div class="eng-card-head">
+<div class="panel-title wb-text wb-text--panel-title">Hands-on Engineering</div>
+</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">From prototype to delivery, I contribute hands-on with quality, performance, and maintainability in mind.</p>
+</div>
+<div class="eng-card">
+<div class="eng-card-head">
+<div class="panel-title wb-text wb-text--panel-title">Technical Leadership</div>
+</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">I lead prioritization, alignment, reviews, and process improvements to keep delivery moving.</p>
+</div>
+</div>
+<div class="eng-bottom">
+<div class="eng-panel">
+<div class="eng-subtitle sub-title wb-text wb-text--panel-title">Deliverables</div>
+<ul class="bullets eng-bullets wb-text wb-text--body wb-text--on-light">
+<li class="wb-text wb-text--body">Architecture docs (diagrams / principles / decision log / high-level &amp; detailed design docs)</li>
+<li class="wb-text wb-text--body">Implementation PRs &amp; reviews</li>
+<li class="wb-text wb-text--body">Roadmap &amp; prioritization draft</li>
+<li class="wb-text wb-text--body">Operational improvements (automation / standardization)</li>
+</ul>
+</div>
+<div class="eng-panel">
+<div class="eng-subtitle sub-title wb-text wb-text--panel-title">Availability</div>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">Available for both time-based and deliverable-based engagements. Share the problem and expectations first. Please reach out via the contact form below.</p>
+</div>
+</div>
+<div class="eng-cta"><a class="eng-cta-btn" href="#contact">Go to CONTACT</a></div>
+</div>
+</section>
+<section class="area bg-contact fixed-bg" id="contact">
+<div class="content">
+<h2 class="section-title wb-text wb-text--title">CONTACT</h2>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">For inquiries or collaboration, use the form below or email me directly.</p>
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light">Using the form is the fastest way to reach me (email is also available if preferred).</p>
+<form action="https://formspree.io/f/mkorjbpn" class="contact-form" id="contact-form" method="POST">
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">Name</span>
+<input class="cf-input" name="name" required="" type="text"/>
+</label>
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">Email</span>
+<input class="cf-input" name="email" required="" type="email"/>
+</label>
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">Subject</span>
+<input class="cf-input" name="subject" required="" type="text"/>
+</label>
+<label class="cf-field">
+<span class="cf-label wb-text wb-text--body wb-text--muted">Message</span>
+<textarea class="cf-textarea" name="message" required="" rows="6"></textarea>
+</label>
+<div class="cf-actions">
+<button class="cf-submit" type="submit">Send</button>
+<div>
+<p aria-live="polite" class="cf-status wb-text wb-text--body" id="cf-status"></p>
+</div>
+</div>
+</form>
+<div class="contact-direct">
+<p class="wb-text wb-text--body wb-text--muted wb-text--on-light"><strong>Or email:</strong> <a class="mail-link" data-domain="waffbell.com" data-user="contact" href="#">contact@waffbell.com</a></p>
+</div>
+<script id="contact-form-handler">
+  (function(){
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('cf-status');
+    if(!form || !status) return;
+
+    const okMsg = "Sent. Thank you for your message.";
+    const ngMsg = "Failed to send. Please email me directly.";
+    const sendingMsg = "Sending\u2026";
+
+    form.addEventListener('submit', async function(e){
+      e.preventDefault();
+      status.textContent = sendingMsg;
+
+      try {
+        const endpoint = form.getAttribute('action') || '';
+        if(!endpoint || endpoint === 'FORM_ENDPOINT') {
+          status.textContent = ngMsg;
+          return;
+        }
+
+        const fd = new FormData(form);
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: fd,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if(res.ok) {
+          form.reset();
+          status.textContent = okMsg;
+        } else {
+          status.textContent = ngMsg;
+        }
+      } catch(err) {
+        status.textContent = ngMsg;
+      }
+    });
+  })();
+  </script>
+</div>
+</section>
+</div>
+<footer class="site-footer"><div class="footer-inner"><a aria-label="Home" class="logo-name footer-logo" href="#top"><svg aria-label="WaffBell" role="img" viewbox="0 0 91 24"><text dominant-baseline="central" text-anchor="middle" x="45.5" y="12">WaffBell</text></svg></a><div class="footer-copy">© WaffBell. All rights reserved.</div></div></footer>
+<script src="js/main.js"></script>
+</body>
+</html>

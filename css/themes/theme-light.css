@@ -1,0 +1,77 @@
+:root[data-theme="light"]{
+  /* Core surfaces (warm, friendly) */
+  --wb-bg: #fbf7f1;        /* warm ivory */
+  --wb-bg-2: #fffdf8;      /* off-white */
+  --wb-panel: #ffffff;     /* panels/cards */
+
+  /* Typography (warm dark) */
+  --wb-text: #2a1f17;
+  --wb-muted: rgba(42,31,23,.70);
+
+  /* Lines / borders (visible on light) */
+  --wb-line: rgba(42,31,23,.14);
+  --wb-border: rgba(42,31,23,.16);
+
+  /* Form inputs (terra cotta) */
+  --wb-input-border: rgba(176, 96, 67, .55);
+  --wb-input-border-focus: rgba(176, 96, 67, .85);
+  --wb-input-focus-ring: rgba(176, 96, 67, .18);
+  --wb-input-bg: var(--wb-bg-2);
+  --wb-input-text: var(--wb-text);
+
+  /* Brand */
+  --wb-yellow: #ffbd31;      /* logo only: DO NOT CHANGE */
+  --wb-yellow-2: #ffbd31;    /* keep aligned (unused in light UI) */
+
+  /* UI accent (separate from logo yellow for readability on light) */
+  --wb-accent: #c0552b;          /* terracotta */
+  --wb-accent-soft: rgba(192,85,43,.18);
+  --wb-accent-strong: #a64622;
+  --wb-on-accent: #ffffff;
+
+  /* Shadows */
+  --wb-shadow: 0 14px 34px rgba(42,31,23,.10);
+
+  /* Section title */
+  --wb-section-title-line: rgba(42,31,23,.30);
+  --wb-section-title-color: rgba(192,85,43,.96);
+
+  /* Chips */
+  --chip-bg: rgba(42,31,23,0.04);
+  --chip-bd: rgba(42,31,23,0.18);
+  --chip-strong-bg: rgba(192,85,43,0.08);
+  --chip-strong-bd: rgba(192,85,43,0.28);
+  --chip-strong-glow: rgba(192,85,43,0.18);
+
+  /* Title styling (outline / fill) */
+  --wb-title-fill: var(--wb-text);
+  --wb-title-stroke: rgba(192,85,43,.88);
+  --wb-title-muted: var(--wb-muted);
+
+  /* Section FX (light: subtle) */
+  --wb-skills-glow-a: rgba(192,85,43,0.10);
+  --wb-skills-glow-b: rgba(192,85,43,0.06);
+
+  --wb-works-glow-a: rgba(192,85,43,0.12);
+  --wb-works-glow-b: rgba(192,85,43,0.08);
+  --wb-works-glow-c: rgba(192,85,43,0.10);
+
+  --wb-danger: #c8352b;
+
+  /* Canvas / animation (light: subtle warm) */
+  --wb-fx-constellation-line: rgba(192,85,43,0.18);
+  --wb-fx-constellation-dot: rgba(192,85,43,0.34);
+  --wb-fx-constellation-faint: rgba(192,85,43,0.06);
+  --wb-fx-constellation-glow: rgba(192,85,43,0.08);
+  --wb-fx-opening-particle: rgba(192,85,43,0.92); /* keep as brand moment */
+  --wb-fx-opening-text: rgba(42,31,23,.86);
+  --wb-fx-opening-glow: rgba(192,85,43,0.12);
+
+  /* Accent labels */
+  --wb-panel-subtitle: #7a5a3a;
+  --wb-facet-label: #b04a3c;
+  --wb-kicker: #8a4b2a;
+  --wb-fx-opening-bg: radial-gradient(1100px 720px at 18% 22%, rgba(192,85,43,0.14), transparent 60%),
+                     radial-gradient(900px 520px at 82% 32%, rgba(255,189,49,0.10), transparent 62%),
+                     linear-gradient(180deg, #fbf7f1, #fffdf8);
+}

@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@layer reset, base, layout, components, pages;
+
+@import url("./base/reset.css") layer(reset);
+
+@import url("./base/tokens.css") layer(base);
+@import url("./themes/theme-dark.css") layer(base);
+@import url("./themes/theme-light.css") layer(base);
+@import url("./base/typography.css") layer(base);
+@import url("./base/utilities.css") layer(base);
+@import url("./base/dark-theme-text-colors.css") layer(base);
+
+@import url("./layout/page.css") layer(layout);
+@import url("./layout/header.css") layer(layout);
+@import url("./layout/footer.css") layer(layout);
+
+@import url("./components/nav.css") layer(components);
+@import url("./components/buttons.css") layer(components);
+@import url("./components/section-shell.css") layer(components);
+@import url("./components/sections-common.css") layer(components);
+@import url("./components/sections-about.css") layer(components);
+@import url("./components/sections-top.css") layer(components);
+@import url("./components/sections-skills.css") layer(components);
+@import url("./components/sections-works.css") layer(components);
+@import url("./components/sections-engagement.css") layer(components);
+@import url("./components/sections-contact.css") layer(components);
+@import url("./components/backgrounds.css") layer(components);
+@import url("./components/animations.css") layer(components);
+

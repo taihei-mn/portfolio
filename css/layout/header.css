@@ -1,0 +1,376 @@
+@charset "utf-8";
+
+:root{
+  --wb-header-h: 64px;
+}
+
+body{
+  margin: 0;
+  padding-top: var(--header-offset, var(--wb-header-h));
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--wb-header-h);
+  z-index: 1000;
+}
+
+.bg-header{
+  position: absolute;
+  inset: 0;
+  background: rgba(15,17,21,.82);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--wb-line);
+  pointer-events: none;
+}
+
+
+.header .header-inner{
+  position: relative;
+  min-height: var(--wb-header-h);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+}
+
+.header-left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;  justify-self: start;
+}
+
+.header-left{ justify-self: start; }
+
+.header-right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;  justify-self: end;
+}
+
+.header nav.topnav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  gap: 10px;
+
+  
+  flex-wrap: nowrap;
+  overflow: auto;
+  scrollbar-width: none;
+}
+.header nav.topnav::-webkit-scrollbar{ display:none; }
+
+.header nav.topnav a{
+  text-decoration: none;
+  color: rgba(255,255,255,0.82);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+  white-space: nowrap;
+}
+.header nav.topnav a:hover{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.10);
+  color: rgba(255,255,255,0.95);
+}
+.header nav.topnav a.is-active{
+  background: rgba(255,189,49,0.16);
+  border-color: rgba(255,189,49,0.55);
+  color: rgba(255,255,255,0.98);
+}
+
+.header .lang-switch{
+  display: inline-flex;
+  gap: 6px;
+  margin-left: 8px;
+}
+.header .lang-switch a{
+  padding: 6px 9px;
+  font-size: 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.18);
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.header .lang-switch a:hover{
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+}
+.header .lang-switch a.current{
+  border-color: rgba(255,189,49,0.55);
+  background: rgba(255,189,49,0.12);
+  color: rgba(255,255,255,0.96);
+}
+
+.logo-name{
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  height: var(--wb-logo-box-h);
+  overflow: visible;
+  border-radius: 999px;
+  padding: 2px 10px;
+  text-decoration: none;
+  transition: background .18s ease, box-shadow .18s ease;
+}
+
+.logo-name > svg{
+  width: var(--wb-logo-svg-w);
+  height: var(--wb-logo-svg-h);
+}
+
+.logo-name > svg > text{
+  fill: var(--wb-yellow);
+  font-weight: 700;
+  letter-spacing: .5px;
+  stroke: transparent;
+  stroke-width: 0;
+  paint-order: stroke fill;
+  transition: fill .18s ease, stroke .18s ease, stroke-width .18s ease;
+}
+
+.logo-name:hover{
+  background: transparent;
+  box-shadow: none;
+}
+
+.logo-name:hover > svg > text{
+  fill: transparent;
+  stroke: var(--wb-yellow);
+  stroke-width: 2.6px;
+}
+
+.menu-button{
+  display: none;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--wb-line);
+  background: rgba(255,255,255,.04);
+  cursor: pointer;
+}
+
+.menu-button > span{
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--wb-accent);
+  border-radius: 999px;
+}
+
+.menu-button > span:nth-child(2){
+  margin: 5px 0;
+}
+
+@media (max-width: 900px){
+  .menu-button{ display: inline-flex; }
+}
+
+
+/* --- Logo size fix (override) ---
+   Ensure the header logo stays readable and is not affected by viewport-height rules. */
+.header .logo-name{
+  width: var(--wb-logo-box-w);
+  height: var(--wb-logo-box-h);
+}
+.header .logo-name svg{
+  width: var(--wb-logo-svg-w);
+  height: var(--wb-logo-svg-h);
+}
+.header .logo-name svg text{
+  font-size: var(--wb-logo-text-size);
+}
+
+
+
+
+/* Utility */
+.sr-only{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Theme toggle (no layout break; sits next to language switch) */
+.header .header-right{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle{
+  appearance: none;
+  border: 1px solid var(--chip-bd);
+  background: var(--chip-bg);
+  color: var(--wb-text);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  letter-spacing: .04em;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+}
+.theme-toggle:hover{
+  border-color: var(--chip-strong-bd);
+  box-shadow: 0 0 0 2px rgba(255,189,49,.08);
+}
+.theme-toggle:active{
+  transform: translateY(1px);
+}
+
+
+
+/* Toggle switch UI */
+.theme-toggle.theme-switch{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 26px;
+  padding: 0;
+  border-radius: 999px;
+  box-sizing: border-box;
+  border: 1px solid var(--switch-frame, var(--chip-bd));
+  background: transparent; /* frame only; fill is the track */
+  color: inherit;
+  position: relative;
+}
+.theme-toggle.theme-switch .theme-switch__track{
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  box-sizing: border-box;
+  background: var(--switch-track, rgba(0,0,0,.10));
+  position: relative;
+  display: block;
+}
+
+.theme-toggle.theme-switch .theme-switch__thumb{
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--switch-thumb, var(--wb-text));
+transition: transform 180ms ease;m .18s ease, background-color .18s ease;
+}
+/* When aria-checked=true (dark), slide thumb right */
+.theme-toggle.theme-switch[aria-checked="true"] .theme-switch__thumb{
+  transform: translateX(20px);
+  background: var(--switch-thumb, var(--wb-text));
+}
+.theme-toggle.theme-switch:hover{
+  border-color: var(--chip-strong-bd);
+  box-shadow: 0 0 0 2px rgba(255,189,49,.08);
+}
+.theme-toggle.theme-switch:active{
+  transform: none;
+}
+
+/* --- Light theme header overrides (warm) --- */
+
+
+
+
+
+
+
+
+
+/* Language switch + Theme toggle (default should remain readable even when not selected) */
+
+
+
+
+
+
+
+@media (max-width: 520px){
+  .header-inner{ gap: 8px; padding: 0 10px; }
+  .header .header-right{ gap: 6px; }
+  .header .header-right .theme-toggle{ display:none; }
+  .theme-toggle{
+    padding: 5px 8px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .lang-switch a{
+    padding: 5px 8px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+}
+
+/* --- Light theme header overrides (warm) --- */
+:root[data-theme="light"] .bg-header{
+  /* header background (warm greige) */
+  background: #b39a84;
+  border-bottom-color: rgba(0,0,0,0.12);
+}
+
+:root[data-theme="light"] .header nav.topnav a{
+  color: rgba(20,20,20,0.82);
+}
+:root[data-theme="light"] .header nav.topnav a:hover{
+  background: rgba(255,255,255,0.35);
+  border-color: rgba(0,0,0,0.10);
+  color: rgba(20,20,20,0.92);
+}
+:root[data-theme="light"] .header nav.topnav a.is-active{
+  background: color-mix(in srgb, var(--wb-accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--wb-accent) 55%, transparent);
+  color: rgba(20,20,20,0.92);
+}
+
+/* JP/EN switch in header */
+:root[data-theme="light"] .header .lang-switch a{
+  color: var(--wb-accent);
+  border-color: rgba(0,0,0,0.14);
+  background: rgba(255,255,255,0.32);
+}
+:root[data-theme="light"] .header .lang-switch a:hover{
+  background: rgba(255,255,255,0.50);
+  border-color: rgba(0,0,0,0.18);
+}
+:root[data-theme="light"] .header .lang-switch a.current{
+  background: var(--wb-accent);
+  border-color: var(--wb-accent);
+  color: rgba(255,255,255,0.98);
+}
+
+/* Theme toggle: ensure thumb/track have contrast in each theme */
+
+
+/* Theme toggle: ensure thumb/track/frame have contrast in each theme */
+:root[data-theme="light"] .theme-toggle.theme-switch{
+  --switch-frame: rgba(0,0,0,0.22);
+  --switch-track: rgba(255,255,255,0.78);
+  --switch-thumb: rgba(0,0,0,0.92);
+}
+:root[data-theme="dark"] .theme-toggle.theme-switch{
+  --switch-frame: rgba(255,255,255,0.22);
+  --switch-track: rgba(255,255,255,0.16);
+  --switch-thumb: rgba(255,255,255,0.95);
+}
