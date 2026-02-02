@@ -23,6 +23,7 @@
 @import url("./components/sections-top.css") layer(components);
 @import url("./components/sections-skills.css") layer(components);
 @import url("./components/sections-works.css") layer(components);
+@import url("./components/sections-approach.css") layer(components);
 @import url("./components/sections-engagement.css") layer(components);
 @import url("./components/sections-contact.css") layer(components);
 @import url("./components/backgrounds.css") layer(components);

@@ -1,0 +1,75 @@
+/* =========================
+   ENGINEERING APPROACH
+   ========================= */
+
+.approach .approach-body{
+  margin-top: 16px;
+  max-width: 900px;
+}
+
+.approach .approach-body p{
+  margin: 0 0 12px 0;
+}
+
+.approach .approach-link{
+  margin-top: 16px;
+}
+
+.approach .approach-link .wb-link{
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.approach .approach-link .wb-link:hover{
+  text-decoration: underline;
+}
+
+/* Cards (bullet list) */
+.approach .approach-cards{
+  margin-top: 18px;
+}
+
+.approach .approach-subtitle{
+  margin: 0 0 10px 0;
+  opacity: 0.9;
+}
+
+.approach .approach-cards .bullets{
+  margin-top: 0;
+}
+
+/* CTA button */
+.approach .approach-cta{
+  margin-top: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Card grid */
+.approach .approach-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 880px){
+  .approach .approach-grid{
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+.approach .approach-card{
+  padding: 16px 16px 14px;
+}
+
+.approach .approach-card__title{
+  margin: 0 0 8px 0;
+}
+
+.approach .approach-card__desc{
+  margin: 0;
+  opacity: 0.92;
+}
