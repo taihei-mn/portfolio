@@ -76,7 +76,7 @@
   content: none !important;
   display: none !important;
 }
-#opening{ position: fixed; inset:0; }
+#opening{ position: fixed; inset:0; z-index: 2001; pointer-events: auto; }
 #opening-canvas{
   position: absolute;
   inset: 0;
@@ -380,3 +380,5 @@ ul.bullets.eng-bullets > li:before{
 #about .timeline-desc{
   margin: 0;
 }
+
+.opening{ pointer-events: auto; }
